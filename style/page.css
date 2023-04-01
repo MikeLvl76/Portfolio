@@ -26,10 +26,10 @@ a {
 .home-link {
     font-size: 24px;
     border-color: #000000;
-    border-width: 1px;
+    border-width: thin;
     border-radius: 100%;
     padding: 5px;
-    text-align: var(--text-center);
+    justify-content: start;
 }
 
 .nav-link {
