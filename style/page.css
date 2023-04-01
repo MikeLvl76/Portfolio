@@ -1,9 +1,22 @@
 :root {
     --bg: rgb(2, 0, 36);
     --bg-linear: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(41,36,34,1) 0%, rgba(0,212,255,1) 100%);
+    --text-center: center;
 }
 
 body {
     background: var(--bg);
     background: var(--bg-linear);
+}
+
+.title {
+    text-align: var(--text-center);
+    font-size: large;
+    color: #fff;
+}
+
+.description {
+    text-align: var(--text-center);
+    font-size: small;
+    color: #fff;
 }
