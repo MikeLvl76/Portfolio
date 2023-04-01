@@ -23,11 +23,19 @@ a {
     text-decoration: none;
 }
 
+.home-link {
+    font-size: 24px;
+    border: #000000;
+    border-width: 1px;
+    border-radius: 100%;
+    padding: 5px;
+}
+
 .nav-link {
     flex: auto;
     flex-direction: row;
     text-align: var(--text-center);
-    justify-content: start;
+    justify-content: end;
     font-size: 24px;
 }
 
