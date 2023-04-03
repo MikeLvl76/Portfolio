@@ -16,13 +16,13 @@ export default function Navbar() {
       <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
         <div className="text-sm lg:flex-grow">
           <Link
-            className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
+            className="block mt-4 text-xl lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
             to="/about"
           >
             About
           </Link>
           <Link
-            className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
+            className="block mt-4 text-xl lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4"
             to="/careers"
           >
             Careers
