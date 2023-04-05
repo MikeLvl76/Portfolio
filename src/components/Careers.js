@@ -16,7 +16,7 @@ export default function Careers() {
         </h1>
         <div className={"grid grid-cols-2 gap-2 mt-3 text-l p-2"}>
           <div
-            className={`ml-5 w-max max-w-screen-sm cursor-pointer ${
+            className={`ml-5 w-max max-w-screen-sm cursor-pointer ease-in-out duration-300 ${
               expandSections.section_1
                 ? "border border-2 border-teal-500 rounded-lg"
                 : ""
@@ -26,7 +26,7 @@ export default function Careers() {
             }
           >
             <div
-              className={`${
+              className={`ease-in-out duration-300 ${
                 expandSections.section_1
                   ? "bg-teal-500 text-white rounded-sm p-2 w-full"
                   : ""
@@ -50,33 +50,47 @@ export default function Careers() {
                   <h2 className="bg-teal-500 rounded-lg p-2 text-white w-fit">
                     First year
                   </h2>
-                  <p className="break-words border-l-2 border-black px-2 mt-2">
-                    Learned{" "}
-                    <a
-                      className="text-teal-500 hover:underline"
-                      href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
-                    >
-                      JavaScript
-                    </a>{" "}
-                    and specially the framework{" "}
-                    <a
-                      className="text-teal-500 hover:underline"
-                      href="https://nodejs.org/en"
-                    >
-                      Node
-                    </a>{" "}
-                    commonly used as back-end for web development and as package
-                    manager. Turns out I'm still using Node because it's very
-                    useful for installing other frameworks or packages. I
-                    recommend also{" "}
-                    <a
-                      className="text-teal-500 hover:underline"
-                      href="https://github.com/nvm-sh/nvm"
-                    >
-                      Node Version Manager
-                    </a>{" "}
-                    in case of installing specific Node version and its ease to use.
-                  </p>
+                  <ul className="break-words">
+                    <li className="border-l-2 border-black px-2 mt-2">
+                      Learned{" "}
+                      <a
+                        className="text-teal-500 hover:underline"
+                        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+                      >
+                        JavaScript
+                      </a>{" "}
+                      and its frameworks{" "}
+                      <a
+                        className="text-teal-500 hover:underline"
+                        href="https://nodejs.org/en"
+                      >
+                        Node
+                      </a>{" "}
+                      and{" "}
+                      <a
+                        className="text-teal-500 hover:underline"
+                        href="https://react.dev/ "
+                      >
+                        ReactJS
+                      </a>
+                    </li>
+                    <li className="border-l-2 border-black px-2 mt-2">
+                      Learned{" "}
+                      <a
+                        className="text-teal-500 hover:underline"
+                        href="https://www.scala-lang.org/"
+                      >
+                        Scala
+                      </a>{" "}
+                      and discovered new programming paradigm :{" "}
+                      <a
+                        className="text-teal-500 hover:underline"
+                        href="https://en.wikipedia.org/wiki/Functional_programming"
+                      >
+                        Functional Programming
+                      </a>
+                    </li>
+                  </ul>
                 </div>
               </div>
             ) : null}
