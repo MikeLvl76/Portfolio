@@ -174,7 +174,7 @@ export default function Master() {
     <div
       className={`ml-2 w-max max-w-screen-sm cursor-pointer ease-in-out duration-500 ${
         expandSections.section_1
-          ? "border border-2 border-teal-500 rounded-lg"
+          ? "border border-2 border-teal-500 rounded-lg mb-2"
           : ""
       }`}
     >
@@ -185,7 +185,10 @@ export default function Master() {
             : ""
         }`}
         onClick={() =>
-          setExpandSections({ section_1: !expandSections.section_1 })
+          setExpandSections((prev) => ({
+            ...prev,
+            section_1: !expandSections.section_1,
+          }))
         }
       >
         Master degree in Computer Science at{" "}
