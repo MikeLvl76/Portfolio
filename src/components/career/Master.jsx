@@ -1,11 +1,8 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { CareerContext } from "./CareerContext";
 
-export default function Careers() {
-  const [expandSections, setExpandSections] = useState({
-    section_1: false,
-    section_2: false,
-    section_3: false,
-  });
+export default function Master() {
+  const { expandSections, setExpandSections } = useContext(CareerContext);
 
   const [firstYearSelected, setFirstYearSelected] = useState(true);
 
@@ -174,67 +171,41 @@ export default function Careers() {
   );
 
   return (
-    <div>
-      <title>Careers</title>
+    <div
+      className={`ml-2 w-max max-w-screen-sm cursor-pointer ease-in-out duration-500 ${
+        expandSections.section_1
+          ? "border border-2 border-teal-500 rounded-lg"
+          : ""
+      }`}
+    >
       <div
-        className={`flex flex-col items-start ml-5 mt-3 border border-4 border-teal-500 rounded-lg w-fit ${
-          expandSections.section_1 ? "h-96" : ""
-        } ease-in-out duration-500 overflow-auto`}
+        className={`ease-in duration-500 ${
+          expandSections.section_1
+            ? "bg-teal-500 text-white rounded-sm p-2 w-full"
+            : ""
+        }`}
+        onClick={() =>
+          setExpandSections({ section_1: !expandSections.section_1 })
+        }
       >
-        <h1 className="w-full text-left text-white bg-teal-500 text-2xl p-2">
-          School career
-        </h1>
-        <div className={`flex flex-col p-2 ease-in-out duration-500`}>
-          <div
-            className={`ml-2 w-max max-w-screen-sm cursor-pointer ease-in-out duration-500 ${
-              expandSections.section_1
-                ? "border border-2 border-teal-500 rounded-lg"
-                : ""
-            }`}
-          >
-            <div
-              className={`ease-in duration-500 ${
-                expandSections.section_1
-                  ? "bg-teal-500 text-white rounded-sm p-2 w-full"
-                  : ""
-              }`}
-              onClick={() =>
-                setExpandSections({ section_1: !expandSections.section_1 })
-              }
-            >
-              Master degree in Computer Science at{" "}
-              <a
-                className={`ease-in duration-500 ${
-                  expandSections.section_1
-                    ? "bg-teal-500 text-white hover:underline"
-                    : "text-teal-600 hover:underline"
-                }`}
-                href="https://www.univ-lehavre.fr/"
-              >
-                University of Le Havre (2021-2023)
-              </a>
-            </div>
-            {expandSections.section_1 ? (
-              <div className="ease-in-out duration-500 p-2 w-fit">
-                {renderYearsButton()}
-                {firstYearSelected ? renderFirstYear() : renderLastYear()}
-              </div>
-            ) : null}
-          </div>
-          <div className="ml-2 w-max">
-            Bachelor degree in Computer Science at{" "}
-            <a
-              className="text-teal-600 hover:underline"
-              href="https://www.univ-lehavre.fr/"
-            >
-              University of Le Havre
-            </a>
-          </div>
-          <div className="ml-2 w-max">
-            High School diploma in Sciences, speciality Biology
-          </div>
-        </div>
+        Master degree in Computer Science at{" "}
+        <a
+          className={`ease-in duration-500 ${
+            expandSections.section_1
+              ? "bg-teal-500 text-white hover:underline"
+              : "text-teal-600 hover:underline"
+          }`}
+          href="https://www.univ-lehavre.fr/"
+        >
+          University of Le Havre (2021-2023)
+        </a>
       </div>
+      {expandSections.section_1 ? (
+        <div className="ease-in-out duration-500 p-2 w-fit">
+          {renderYearsButton()}
+          {firstYearSelected ? renderFirstYear() : renderLastYear()}
+        </div>
+      ) : null}
     </div>
   );
 }
