@@ -1,27 +1,18 @@
-import { Box } from "@mui/material";
+import About from "./About";
+import Career from "./Career";
+import Homepage from "./Homepage";
+import Navbar from "./Navbar";
+import { Route, Routes } from "react-router-dom";
 
 export default function App() {
   return (
-    <Box
-      display={"flex"}
-      flexDirection={"column"}
-      alignItems={"center"}
-      justifyContent={"center"}
-    >
-      <h1>Welcome to my Portfolio! </h1>
-      <p>You're on the homepage, take a look on other pages!</p>
-
-      <footer>
-        <a href="https://github.com/MikeLvl76">
-          <img
-            src="github_logo.png"
-            width={50}
-            height={50}
-            alt="Github user"
-            title="Visit my Github page!"
-          />
-        </a>
-      </footer>
-    </Box>
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/career" element={<Career />}/>
+      </Routes>
+    </>
   );
 }
