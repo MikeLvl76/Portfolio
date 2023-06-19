@@ -16,6 +16,7 @@ export default function Homepage() {
       <Box>
         <a href="https://github.com/MikeLvl76">
           <img
+            crossOrigin="anonymous"
             src="github_logo.png"
             width={50}
             height={50}
