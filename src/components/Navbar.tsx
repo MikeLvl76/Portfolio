@@ -25,15 +25,13 @@ export default function Navbar() {
           gap: 10,
         }}
       >
-        <Link to={"/"}>
+        <Link className="home_link" to={"/"}>
           <Home
             sx={{
-              fontSize: "50px",
+              fontSize: "45px",
               color: "#111111",
-              border: "solid",
-              borderColor: "#111111",
-              borderRadius: 20,
               padding: 1,
+              transitionDuration: "1s",
             }}
           />
         </Link>

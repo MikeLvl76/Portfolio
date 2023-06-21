@@ -1,4 +1,4 @@
-.career_link, .about_link {
+.home_link, .career_link, .about_link {
     text-decoration: none;
     color: #111111;
     font-size: 30px;
@@ -6,12 +6,11 @@
     transition-duration: 1s;
 }
 
-.career_link:hover, .about_link:hover {
-    color: #ff0000;
+.home_link:hover, .career_link:hover, .about_link:hover {
     transform: translate(0%, 10%);
     background-color: #cccccc;
     border-radius: 10%;
-    padding: 1%;
+    padding: 3%;
     transition-duration: 1s;
 }
 
