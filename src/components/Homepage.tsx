@@ -1,30 +1,33 @@
 import { Box } from "@mui/material";
+import "../style/homepage.css";
+import { GitHub } from "@mui/icons-material";
 
 export default function Homepage() {
   return (
     <Box
-      display={"flex"}
-      flexDirection={"column"}
-      alignItems={"center"}
-      justifyContent={"center"}
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+      }}
     >
-      <Box>
+      <Box sx={{ minHeight: "80vh", placeSelf: "center" }}>
         <h1>Welcome to my Portfolio! </h1>
         <p>You're on the homepage, take a look on other pages!</p>
       </Box>
 
-      <Box>
+      <footer>
         <a href="https://github.com/MikeLvl76">
-          <img
-            crossOrigin="anonymous"
-            src="github_logo.png"
-            width={50}
-            height={50}
-            alt="Github user"
-            title="Visit my Github page!"
+          <GitHub
+            sx={{
+              width: 50,
+              height: 50,
+              color: '#000000',
+            }}
+            titleAccess="Visit my Github page!"
           />
         </a>
-      </Box>
+      </footer>
     </Box>
   );
 }

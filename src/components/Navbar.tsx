@@ -1,9 +1,17 @@
+import { useContext, useEffect } from "react";
 import { Home } from "@mui/icons-material";
 import { Box } from "@mui/material";
 import { Link } from "react-router-dom";
 import "../style/navbar.css";
+import { OptionsContext } from "./context/OptionsContext";
 
 export default function Navbar() {
+  const { list, setList } = useContext(OptionsContext);
+
+  useEffect(() => {
+    console.log(list);
+  }, [list]);
+
   return (
     <Box
       sx={{
@@ -42,9 +50,10 @@ export default function Navbar() {
           About
         </Link>
       </Box>
+
       <div className="theme_wrapper">
         <div className="wrapper">
-          <input type="checkbox" id="theme" />
+          <input type="checkbox" id="theme" onChange={() => setList({ darkMode: !list.darkMode })}/>
           <label htmlFor="theme"></label>
         </div>
       </div>
