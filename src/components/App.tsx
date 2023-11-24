@@ -1,5 +1,5 @@
-import { Box } from "@mui/material";
+import Header from "./Header/Header";
 
 export default function App() {
-  return <Box></Box>;
+  return <Header currentPage="Home" />;
 }
