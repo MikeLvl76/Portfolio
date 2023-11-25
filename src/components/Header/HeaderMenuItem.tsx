@@ -1,4 +1,4 @@
-import { MenuItem } from "@mui/material";
+import { MenuItem, Typography } from "@mui/material";
 import { MouseEvent } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -18,5 +18,11 @@ export default function HeaderMenuItem(props: HeaderMenuItemProps) {
     return e;
   };
 
-  return <MenuItem onClick={handleItemClick}>{label}</MenuItem>;
+  return (
+    <MenuItem onClick={handleItemClick} sx={{ "&:hover": { backgroundColor: 'secondary.main' } }}>
+      <Typography variant="body1" component="div">
+        {label}
+      </Typography>
+    </MenuItem>
+  );
 }

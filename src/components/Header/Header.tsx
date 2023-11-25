@@ -43,7 +43,7 @@ export default function Header(props: HeaderProps) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          <Typography component="div" variant="h2" sx={{ flexGrow: 1 }}>
             {currentPage}
           </Typography>
           <HeaderMenu
