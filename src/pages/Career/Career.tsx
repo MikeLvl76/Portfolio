@@ -1,5 +1,8 @@
 import { Box, Typography } from "@mui/material";
 import Header from "../../components/Header/Header";
+import School from "./School";
+import HighSchool from "./HighSchool";
+import University from "./University";
 
 export default function Career() {
   return (
@@ -13,6 +16,11 @@ export default function Career() {
       >
         My career
       </Typography>
+      <Box>
+        <School />
+        <HighSchool />
+        <University />
+      </Box>
     </Box>
   );
 }
