@@ -1,9 +1,7 @@
 import ReactDOM from "react-dom/client";
 import App from "./components/App.tsx";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import About from "./pages/About.tsx";
-import Career from "./pages/Career.tsx";
-import Projects from "./pages/Projects.tsx";
+import { About, Career, Projects } from "./pages";
 import { ThemeProvider } from "@mui/material";
 import { customTheme } from "./themes/custom.tsx";
 

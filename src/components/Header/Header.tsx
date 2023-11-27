@@ -7,6 +7,8 @@ import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import HeaderMenu from "./HeaderMenu";
 import HeaderMenuItem from "./HeaderMenuItem";
+import { FormGroup, FormControlLabel } from "@mui/material";
+import { HeaderSwitch } from "./HeaderSwitch";
 
 type HeaderProps = {
   currentPage: string;
@@ -16,6 +18,7 @@ export default function Header(props: HeaderProps) {
   const { currentPage } = props;
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+  const [isDark, setIsDark] = useState<boolean>(false);
 
   const handleMouseOver = (event: MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
@@ -69,6 +72,18 @@ export default function Header(props: HeaderProps) {
               label="Projects"
             />
           </HeaderMenu>
+          <FormGroup>
+            <FormControlLabel
+              control={
+                <HeaderSwitch
+                  checked={isDark}
+                  onChange={() => setIsDark(!isDark)}
+                  aria-label="darkmode switch"
+                />
+              }
+              label={isDark ? "Dark mode" : "Light mode"}
+            />
+          </FormGroup>
         </Toolbar>
       </AppBar>
     </Box>
