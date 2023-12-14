@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import Header from "../../components/Header/Header";
 import School from "./School";
 import HighSchool from "./HighSchool";
@@ -8,14 +8,6 @@ export default function Career() {
   return (
     <Box>
       <Header itemName="Career" />
-      <Typography
-        component="div"
-        variant="h1"
-        textAlign="center"
-        sx={{ flexGrow: 1, padding: 1 }}
-      >
-        My career
-      </Typography>
       <Box>
         <School />
         <HighSchool />

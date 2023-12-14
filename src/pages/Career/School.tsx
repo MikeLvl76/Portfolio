@@ -1,4 +1,4 @@
-import { KeyboardArrowRight, KeyboardArrowDown } from "@mui/icons-material";
+import { KeyboardArrowRight } from "@mui/icons-material";
 import { Box, Divider, Chip } from "@mui/material";
 import { useState } from "react";
 
@@ -11,8 +11,22 @@ export default function School() {
         <Chip
           label="School"
           onClick={() => setIsDiplayed(!isDisplayed)}
-          icon={isDisplayed ? <KeyboardArrowDown /> : <KeyboardArrowRight />}
-          sx={{ fontSize: 20, transition: "all 0.5s ease-out" }}
+          icon={
+            <KeyboardArrowRight
+              sx={
+                isDisplayed
+                  ? {
+                      transform: "rotate(90deg)",
+                      transition: "all 0.5s ease-out",
+                    }
+                  : {
+                      transform: "rotate(0)",
+                      transition: "all 0.5s ease-out",
+                    }
+              }
+            />
+          }
+          sx={{ fontSize: "h2.fontSize" }}
         />
       </Divider>
       <Box
