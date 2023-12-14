@@ -7,7 +7,7 @@ import University from "./University";
 export default function Career() {
   return (
     <Box>
-      <Header currentPage="Career" />
+      <Header itemName="Career" />
       <Typography
         component="div"
         variant="h1"

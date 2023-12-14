@@ -1,5 +1,5 @@
 import Header from "../../components/Header/Header";
 
 export default function About() {
-  return <Header currentPage="About" />;
+  return <Header itemName="About" />;
 }
