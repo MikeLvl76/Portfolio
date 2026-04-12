@@ -36,6 +36,7 @@ export default function RootLayout({
           <NavbarItem label="About me" to="/about-me" />
           <NavbarItem label="Projects" to="/projects" />
           <NavbarItem label="Skills" to="/skills" />
+          <NavbarItem label="Contact me" to="/contact" />
         </Navbar>
         {children}
       </body>
