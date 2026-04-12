@@ -34,8 +34,8 @@ export default function RootLayout({
         <Navbar>
           <NavbarItem icon={HomeIcon} to="/" />
           <NavbarItem label="About me" to="/about-me" />
-          <NavbarItem label="Skills" to="/skills" />
           <NavbarItem label="Projects" to="/projects" />
+          <NavbarItem label="Skills" to="/skills" />
         </Navbar>
         {children}
       </body>
