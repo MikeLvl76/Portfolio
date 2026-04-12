@@ -1,31 +1,81 @@
 "use client";
 
+import { Contact, contactSchema } from "@/lib/zod/contact.schema";
+import { useState, SubmitEvent } from "react";
+import z from "zod";
+import { $ZodFlattenedError } from "zod/v4/core";
+import ContactErrors from "./errors";
+
 export default function Page() {
+  const [form, setForm] = useState<Contact>({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [errors, setErrors] = useState<
+    $ZodFlattenedError<{
+      [K in keyof Contact]: string;
+    }>["fieldErrors"]
+  >();
+
+  const handleSubmit = (event: SubmitEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const result = contactSchema.safeParse(form);
+
+    if (!result.success) {
+      const errors = z.flattenError(result.error);
+      setErrors(errors.fieldErrors);
+      return;
+    }
+
+    setErrors(undefined);
+
+    alert("TODO: send mail with form data");
+    console.log("Data: ", result.data);
+  };
+
   return (
     <div className="flex justify-center items-center min-h-screen p-4">
       <div className="flex flex-col gap-4 p-6 shadow-2xl border border-slate-800 rounded-md w-full min-w-md sm:max-w-lg md:max-w-xl">
         <h1 className="text-2xl sm:text-3xl text-center">Contact me</h1>
 
-        <form className="flex flex-col gap-4">
+        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <div className="flex flex-col gap-1">
             <label className="text-sm sm:text-base">Name</label>
             <input
               type="text"
+              value={form.name}
+              onChange={(e) =>
+                setForm((prev) => ({ ...prev, name: e.target.value }))
+              }
               className="w-full border border-slate-800 rounded-md p-2 text-sm sm:text-base"
             />
+            <ContactErrors fieldName="name" errors={errors} />
           </div>
 
           <div className="flex flex-col gap-1">
             <label className="text-sm sm:text-base">Email</label>
             <input
               type="email"
+              value={form.email}
+              onChange={(e) =>
+                setForm((prev) => ({ ...prev, email: e.target.value }))
+              }
               className="w-full border border-slate-800 rounded-md p-2 text-sm sm:text-base"
             />
+            <ContactErrors fieldName="email" errors={errors} />
           </div>
 
           <div className="flex flex-col gap-1">
             <label className="text-sm sm:text-base">Message</label>
-            <textarea className="w-full border border-slate-800 rounded-md p-2 min-h-30 sm:min-h-37.5 text-sm sm:text-base" />
+            <textarea
+              value={form.message}
+              onChange={(e) =>
+                setForm((prev) => ({ ...prev, message: e.target.value }))
+              }
+              className="w-full border border-slate-800 rounded-md p-2 min-h-30 sm:min-h-37.5 text-sm sm:text-base"
+            />
+            <ContactErrors fieldName="message" errors={errors} />
           </div>
 
           <div className="flex justify-end">
