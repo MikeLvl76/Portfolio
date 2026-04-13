@@ -19,7 +19,7 @@ export default function NavbarItem({ to, icon: Icon, label }: Props) {
         <Icon size={28} fill="#eeeeee" className="hover:cursor-pointer" />
       )}
       {label && (
-        <label className="text-lg font-bold hover:cursor-pointer">
+        <label className="text-sm sm:text-lg font-bold hover:cursor-pointer">
           {label}
         </label>
       )}

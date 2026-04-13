@@ -35,8 +35,8 @@ export default function Page() {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen p-4">
-      <div className="flex flex-col gap-4 p-6 shadow-2xl border border-slate-800 rounded-md w-full min-w-md sm:max-w-lg md:max-w-xl">
+    <div className="flex justify-center items-center p-4">
+      <div className="flex flex-col gap-4 p-6 shadow-2xl border border-slate-800 rounded-md min-w-1/3 sm:min-w-lg md:max-w-xl">
         <h1 className="text-2xl sm:text-3xl text-center">Contact me</h1>
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
