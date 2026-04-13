@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased w-screen h-screen`}
+        className={`flex flex-col gap-4 ${geistSans.variable} ${geistMono.variable} antialiased w-screen h-screen`}
       >
         <Navbar>
           <NavbarItem icon={HomeIcon} to="/" />
