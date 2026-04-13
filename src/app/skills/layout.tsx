@@ -7,5 +7,5 @@ type Props = {
 };
 
 export default function Layout({ children }: Props) {
-  return <div>{children}</div>;
+  return <div className="flex justify-center items-center max-w-screen min-h-screen">{children}</div>;
 }
