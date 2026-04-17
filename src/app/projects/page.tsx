@@ -20,6 +20,10 @@ const sections: Section[] = [
     title: "Python",
     assetDirname: "python",
   },
+  {
+    title: "Java",
+    assetDirname: "java",
+  },
 ];
 
 export default function Page() {

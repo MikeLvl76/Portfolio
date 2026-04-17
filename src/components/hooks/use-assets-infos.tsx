@@ -3,9 +3,12 @@ export type AssetInfos = {
   alt: string;
   title: string;
   description?: string;
+  externalLinks?: Record<string, string>;
 };
 
 const basePath = process.env.__NEXT_ROUTER_BASEPATH || "";
+const baseAppUrl = process.env.NEXT_PUBLIC_BASE_APP_URL;
+const baseRepoUrl = process.env.NEXT_PUBLIC_BASE_REPO_URL;
 
 const infos: AssetInfos[] = [
   {
@@ -244,6 +247,10 @@ const infos: AssetInfos[] = [
     title: "Web Flappy Bird",
     description:
       "Web version of the famous Flappy Bird game app! Fly between the pipes and survive as long as possible!",
+    externalLinks: {
+      app: `${baseAppUrl}/web-flappy-bird`,
+      code: `${baseRepoUrl}/web-flappy-bird`,
+    },
   },
   {
     filepath: `${basePath}/images/js/snake.png`,
@@ -251,12 +258,138 @@ const infos: AssetInfos[] = [
     title: "Web Snake",
     description:
       "Web version of the famous Snake game! Eat food to earn points and avoid hitting bounds!",
+    externalLinks: {
+      app: `${baseAppUrl}/Snake`,
+      code: `${baseRepoUrl}/Snake`,
+    },
   },
   {
     filepath: `${basePath}/images/js/maze.png`,
     alt: "Web Maze image",
     title: "Web Maze",
     description: "Welcome to the maze! Find exit before time runs out!",
+    externalLinks: {
+      app: `${baseAppUrl}/Maze`,
+      code: `${baseRepoUrl}/Maze`,
+    },
+  },
+  {
+    filepath: `${basePath}/images/ts/webgames.webp`,
+    alt: "Web Games logo",
+    title: "Web Games",
+    description: "Play on varied games!",
+    externalLinks: {
+      app: `https://web-games-eight.vercel.app/`,
+      code: `${baseRepoUrl}/web-games`,
+    },
+  },
+  {
+    filepath: `${basePath}/images/python/chesspy.png`,
+    alt: "ChessPy image",
+    title: "ChessPy",
+    description: "A command-line version of chess written in Python.",
+    externalLinks: {
+      code: `${baseRepoUrl}/ChessPy`,
+    },
+  },
+  {
+    filepath: `${basePath}/images/python/codepen-scraper.png`,
+    alt: "Codepen scraper image",
+    title: "Codepen scrpper",
+    description:
+      "An old forked scraper that fetches codepen projects for fun using Selenium.",
+    externalLinks: {
+      code: `${baseRepoUrl}/codepen-scraper`,
+    },
+  },
+  {
+    filepath: `${basePath}/images/python/kakuro-solver.png`,
+    alt: "Kakuro solver image",
+    title: "Kakuro solver",
+    description:
+      "Old college project about resolving kakuro puzzle in Python using simulated annealing.",
+    externalLinks: {
+      code: `${baseRepoUrl}/kakuro-solver`,
+    },
+  },
+  {
+    filepath: `${basePath}/images/java/shapes-in-bag.png`,
+    alt: "Shapes in bag image",
+    title: "Shapes in bag",
+    description:
+      "Old college project about putting different shapes in bag. This project has been redone because it had many issues and hade bad code.",
+    externalLinks: {
+      code: `${baseRepoUrl}/shapes-in-bag`,
+    },
+  },
+  {
+    filepath: `${basePath}/images/js/hangman.png`,
+    alt: "Hangman image",
+    title: "Hangman",
+    description:
+      "Old college project hangman game. Originally developped by using a connected Arduino with WebSocket. The code was improved years before and style is obsolete.",
+    externalLinks: {
+      app: `${baseAppUrl}/Hangman`,
+      code: `${baseRepoUrl}/Hangman`,
+    },
+  },
+  {
+    filepath: `${basePath}/images/python/connect-four.png`,
+    alt: "Connect four image",
+    title: "Connect four",
+    description: "A command line connect four game in Python.",
+    externalLinks: {
+      code: `${baseRepoUrl}/Connect-four`,
+    },
+  },
+  {
+    filepath: `${basePath}/images/js/real-estate-website.png`,
+    alt: "Real Estate Website image",
+    title: "Real Estate Website",
+    description:
+      "An old college project about making a real estate website in JavaScript with Express framework. The project hasn't been updated from long ago. ",
+    externalLinks: {
+      code: `${baseRepoUrl}/Real-Estate-Website`,
+    },
+  },
+  {
+    filepath: `${basePath}/images/java/tic-tac-toe.png`,
+    alt: "Tic-tac-toe image",
+    title: "Tic-tac-toe",
+    description: "A command line tic-tac-toe game in Java.",
+    externalLinks: {
+      code: `${baseRepoUrl}/TICTACTOE`,
+    },
+  },
+  {
+    filepath: `${basePath}/images/python/statistics.png`,
+    alt: "Statistics image",
+    title: "Statistics",
+    description:
+      "A Python projet using matplotlib to display graphs of football teams statistics.",
+    externalLinks: {
+      code: `${baseRepoUrl}/Statistics`,
+    },
+  },
+  {
+    filepath: `${basePath}/images/python/converter.png`,
+    alt: "Converter image",
+    title: "Converter",
+    description:
+      "An app that can convert currency, temperature and others measurements. This app is written in Python and has user interface provided by tkinter.",
+    externalLinks: {
+      code: `${baseRepoUrl}/Converter`,
+    },
+  },
+  {
+    filepath: `${basePath}/images/java/classroom.png`,
+    alt: "Classroom image",
+    title: "Classroom",
+    description:
+      "An old college project developped in Java and using Processing. This project shows a 3D version of one classroom in my University.",
+    externalLinks: {
+      code: `${baseRepoUrl}/Classroom`,
+    },
   },
 ];
 
