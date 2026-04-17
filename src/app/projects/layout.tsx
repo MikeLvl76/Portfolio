@@ -7,5 +7,9 @@ type Props = {
 };
 
 export default function Layout({ children }: Props) {
-  return <div>{children}</div>;
+  return (
+    <div className="flex max-w-screen min-h-screen">
+      {children}
+    </div>
+  );
 }
