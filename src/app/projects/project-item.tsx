@@ -1,9 +1,9 @@
 "use client";
 
 import { AssetInfos, basePath } from "@/components/hooks/use-assets-infos";
+import IconLink from "@/components/icon-link/icon-link";
 import { CodeIcon, ExternalLinkIcon } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 import { SyntheticEvent, useRef, useState } from "react";
 
 type Props = {
@@ -67,32 +67,38 @@ export default function ProjectItem({ info }: Props) {
 
             <div className="flex flex-row items-end min-h-1/4 justify-end gap-2">
               {info.externalLinks?.code && (
-                <Link
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href={info.externalLinks.code}
-                  title="View project code in new tab"
-                  className="hover:bg-slate-800 rounded-full"
-                >
-                  <CodeIcon
-                    color="#eeeeee"
-                    className="size-8 sm:size-9 rounded-full hover:cursor-pointer p-1"
-                  />
-                </Link>
+                <IconLink
+                  icon={CodeIcon}
+                  iconProps={{
+                    color: "#eeeeee",
+                    className:
+                      "size-8 sm:size-9 rounded-full hover:cursor-pointer p-1",
+                  }}
+                  linkProps={{
+                    target: "_blank",
+                    rel: "noopener noreferrer",
+                    href: info.externalLinks.code,
+                    title: "View project code in new tab",
+                    className: "hover:bg-slate-800 rounded-full",
+                  }}
+                />
               )}
               {info.externalLinks?.app && (
-                <Link
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href={info.externalLinks.app}
-                  title="Open project in new tab"
-                  className="hover:bg-slate-800 rounded-full"
-                >
-                  <ExternalLinkIcon
-                    color="#eeeeee"
-                    className="size-8 sm:size-9 rounded-full hover:cursor-pointer p-1"
-                  />
-                </Link>
+                <IconLink
+                  icon={ExternalLinkIcon}
+                  iconProps={{
+                    color: "#eeeeee",
+                    className:
+                      "size-8 sm:size-9 rounded-full hover:cursor-pointer p-1",
+                  }}
+                  linkProps={{
+                    target: "_blank",
+                    rel: "noopener noreferrer",
+                    href: info.externalLinks.app,
+                    title: "Open project in new tab",
+                    className: "hover:bg-slate-800 rounded-full",
+                  }}
+                />
               )}
             </div>
           </div>
