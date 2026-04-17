@@ -45,7 +45,7 @@ export default function ProjectItem({ info }: Props) {
           alt={imageError ? "Error image" : info.alt}
           width={0}
           height={0}
-          loading="lazy"
+          loading="eager"
           onError={setImageError}
           className="hover:cursor-pointer object-fill size-36 sm:size-48 md:size-60 rounded-md"
         />
