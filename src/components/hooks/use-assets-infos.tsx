@@ -6,7 +6,7 @@ export type AssetInfos = {
   externalLinks?: Record<string, string>;
 };
 
-const basePath = process.env.__NEXT_ROUTER_BASEPATH || "";
+export const basePath = process.env.__NEXT_ROUTER_BASEPATH || "";
 const baseAppUrl = process.env.NEXT_PUBLIC_BASE_APP_URL;
 const baseRepoUrl = process.env.NEXT_PUBLIC_BASE_REPO_URL;
 
@@ -295,7 +295,7 @@ const infos: AssetInfos[] = [
   {
     filepath: `${basePath}/images/python/codepen-scraper.png`,
     alt: "Codepen scraper image",
-    title: "Codepen scrpper",
+    title: "Codepen scraper",
     description:
       "An old forked scraper that fetches codepen projects for fun using Selenium.",
     externalLinks: {

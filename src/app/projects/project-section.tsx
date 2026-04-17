@@ -15,7 +15,7 @@ export default function ProjectSection({ title, assetDirname }: Props) {
   const projects = infos.map((info, i) => <ProjectItem key={i} info={info} />);
 
   return (
-    <div className="flex flex-col items-start sm:min-w-md md:min-w-lg max-w-full gap-2 sm:gap-4 p-4">
+    <div className="ml-8 flex flex-col items-start sm:min-w-md md:min-w-lg max-w-full gap-2 sm:gap-4 p-4">
       <div className="flex flex-row gap-x-2 items-end justify-between w-fit">
         <ChevronRightIcon
           color="#111111"
@@ -23,7 +23,7 @@ export default function ProjectSection({ title, assetDirname }: Props) {
         />
         <h1 className="text-sm sm:text-base md:text-xl font-bold">{title}</h1>
       </div>
-      <div className="flex flex-col gap-4 items-center sm:flex-row sm:items-start">
+      <div className="flex flex-col gap-4 items-center sm:flex-row sm:flex-wrap sm:items-start">
         {...projects}
       </div>
     </div>
