@@ -1,10 +1,7 @@
-"use client";
-
-// import type { Metadata } from "next";
+import { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { Navbar, NavbarItem } from "@/components/navbar";
-import { HomeIcon } from "lucide-react";
 import "./globals.css";
+import { CompleteNavbar } from "@/components/navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,10 +13,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// export const metadata: Metadata = {
-//   title: "Portfolio",
-//   description: "My portfolio",
-// };
+export const metadata: Metadata = {
+  title: "Portfolio",
+  description: "Welcome to my Portfolio",
+};
 
 export default function RootLayout({
   children,
@@ -31,13 +28,7 @@ export default function RootLayout({
       <body
         className={`flex flex-col justify-start gap-4 ${geistSans.variable} ${geistMono.variable} antialiased max-w-screen min-h-screen`}
       >
-        <Navbar>
-          <NavbarItem icon={HomeIcon} to="/" />
-          <NavbarItem label="About me" to="/about-me" />
-          <NavbarItem label="Projects" to="/projects" />
-          <NavbarItem label="Skills" to="/skills" />
-          <NavbarItem label="Contact me" to="/contact" />
-        </Navbar>
+        <CompleteNavbar />
         {children}
       </body>
     </html>
