@@ -56,16 +56,16 @@ export default function ProjectItem({ info }: Props) {
           }`}
         >
           <div className="flex flex-col justify-between gap-2 w-full min-h-1/2 max-h-full overscroll-y-auto p-2">
-            <div className="flex flex-col justify-center gap-2 w-full">
-              <h4 className="text-sm sm:text-base font-bold text-pretty text-slate-100 select-none">
+            <div className="flex flex-col justify-start gap-2 w-full max-h-3/4">
+              <h4 className="text-sm sm:text-base font-bold text-pretty text-slate-100 select-none touch-none">
                 {info.title}
               </h4>
-              <p className="text-[10px] sm:text-sm font-medium text-pretty text-slate-100 select-none">
+              <span className="text-[10px] sm:text-sm font-medium text-pretty overflow-hidden hover:overflow-y-auto no-scrollbar text-slate-100 select-none">
                 {info.description ?? "No description"}
-              </p>
+              </span>
             </div>
 
-            <div className="flex flex-row items-center justify-end gap-2">
+            <div className="flex flex-row items-end min-h-1/4 justify-end gap-2">
               {info.externalLinks?.code && (
                 <Link
                   target="_blank"
@@ -76,7 +76,7 @@ export default function ProjectItem({ info }: Props) {
                 >
                   <CodeIcon
                     color="#eeeeee"
-                    className="size-10 rounded-full hover:cursor-pointer p-1"
+                    className="size-8 sm:size-9 rounded-full hover:cursor-pointer p-1"
                   />
                 </Link>
               )}
@@ -90,7 +90,7 @@ export default function ProjectItem({ info }: Props) {
                 >
                   <ExternalLinkIcon
                     color="#eeeeee"
-                    className="size-10 rounded-full hover:cursor-pointer p-1"
+                    className="size-8 sm:size-9 rounded-full hover:cursor-pointer p-1"
                   />
                 </Link>
               )}

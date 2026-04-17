@@ -317,7 +317,7 @@ const infos: AssetInfos[] = [
     alt: "Shapes in bag image",
     title: "Shapes in bag",
     description:
-      "Old college project about putting different shapes in bag. This project has been redone because it had many issues and hade bad code.",
+      "Old college project about putting different shapes in bag. This project has been redone because it had many issues and had bad code.",
     externalLinks: {
       code: `${baseRepoUrl}/shapes-in-bag`,
     },
