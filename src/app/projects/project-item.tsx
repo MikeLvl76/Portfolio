@@ -1,7 +1,7 @@
 "use client";
 
 import { AssetInfos, basePath } from "@/components/hooks/use-assets-infos";
-import IconLink from "@/components/icon-link/icon-link";
+import { IconLink } from "@/components/icon-link";
 import { CodeIcon, ExternalLinkIcon } from "lucide-react";
 import Image from "next/image";
 import { SyntheticEvent, useRef, useState } from "react";
