@@ -1,0 +1,178 @@
+{
+  "navbar": {
+    "items": {
+      "home": {
+        "title": "Accueil"
+      },
+      "about": {
+        "label": "A propos",
+        "title": "Une petite présentation sur moi"
+      },
+      "projects": {
+        "label": "Projets",
+        "title": "Liste de mes projets"
+      },
+      "skills": {
+        "label": "Compétences",
+        "title": "Langages et outils de programmation utilisés"
+      },
+      "contact": {
+        "label": "Me contacter",
+        "title": "N'hésitez pas à me contacter !"
+      }
+    }
+  },
+  "pages": {
+    "home": {
+      "h1": {
+        "label": "Bienvenue"
+      },
+      "text": {
+        "label": "Naviguez à l'aide de la barre de navigation au-dessus"
+      }
+    },
+    "about": {},
+    "projects": {
+      "sections": {
+        "js": {
+          "label": "JavaScript",
+          "items": {
+            "snake": {
+              "alt": "Image du jeu Web Snake",
+              "title": "Web Snake",
+              "desription": "Version web du célère jeu de Snake! Mangez la nourriture pour obtenir des points et attention aux bords !"
+            },
+            "maze": {
+              "alt": "Image du jeu de labyrinthe",
+              "title": "Labyrinthe",
+              "description": "Sortez du labyrinthe avant le temps imparti !"
+            },
+            "hangman": {
+              "alt": "Image du jeu du pendu",
+              "title": "Le pendu",
+              "description": "Ancien projet d'université effectué originellement à l'aide d'un Arduino connecté via WebSocket. Le code du projet n'est plus à jour. Devinez le mot en quelques essais !"
+            },
+            "estate": {
+              "alt": "Image du site d'annonce immobilière",
+              "title": "Site d'annonce immobilière",
+              "description": "Ancien projet d'université codé en JavaScript avec le framework Express.js. Le code n'a pas été mis à jour."
+            }
+          }
+        },
+        "ts": {
+          "label": "TypeScript",
+          "items": {
+            "bird": {
+              "alt": "Image du jeu Web Flappy Bird",
+              "title": "Web Flappy Bird",
+              "description": "Version web du jeu mobile connu sous le nom de Flappy Bird ! Passez entre les tuyaux pour augmenter le score et survivez !"
+            },
+            "webgames": {
+              "alt": "Logo du site Web Games",
+              "title": "Web Games",
+              "description": "Site regroupant des jeux connus jouables sur navigateur. Injouable sur petits écrans pour le moment."
+            }
+          }
+        },
+        "py": {
+          "label": "Python",
+          "items": {
+            "chess": {
+              "alt": "Image du jeu d'échecs",
+              "title": "ChessPy",
+              "description": "Jeu d'échecs en ligne de commande développé en Python. Il sera possible prochainement de télécharger un exécutable pour lancer le jeu sans installer Python."
+            },
+            "scraper": {
+              "alt": "Image du scraper Codepen",
+              "title": "Codepen scraper",
+              "description": "Projet repris et réadapté en utilisant Selenium pour récupérer des informations sur des projets sur Codepen."
+            },
+            "kakuro": {
+              "alt": "Image d'un solveur de Kakuro",
+              "title": "Solveur de Kakuro",
+              "description": "Ancien projet d'université permettant de résoudre automatiquement un Kakuro à l'aide du recuit simulé. Implémenté en Python, le code n'est pas mis à jour."
+            },
+            "connect-four": {
+              "alt": "Image du Puissance 4",
+              "title": "Puissance 4",
+              "description": "Puissance 4 jouable en ligne de commande."
+            },
+            "statistics": {
+              "alt": "Image de statistiques",
+              "title": "Statistiques",
+              "description": "Programme en Python affichant des graphiques avec matplotlib à propos de données sur des clubs de football."
+            },
+            "converter": {
+              "alt": "Image d'un convertisseur d'unité",
+              "title": "Convertisseur d'unité",
+              "description": "Application écrite en Python avec son interface développé avec tkinter. Elle permet de convertir des mesures (température, monnaie, etc)."
+            }
+          }
+        },
+        "java": {
+          "label": "Java",
+          "items": {
+            "shapes": {
+              "alt": "Image de sac rempli de formes",
+              "title": "Sac rempli de formes",
+              "description": "Ancien projet d'université où des formes géométriques devaient être rangées dans un sac selon certaines règles."
+            },
+            "tic-tac-toe": {
+              "alt": "Image d'un morpion",
+              "title": "Le morpion",
+              "description": "Jeu du morpion jouable en ligne de commande."
+            },
+            "classroom": {
+              "alt": "Image d'un salle de classe",
+              "title": "Salle de classe",
+              "description": "Ancien projet d'université où une salle de classe devait être modélisé avec Processing en Java. Le code n'est pas mis à jour."
+            }
+          }
+        }
+      }
+    },
+    "skills": {
+      "sections": {
+        "languages": {
+          "label": "Langages de programmation"
+        },
+        "libs": {
+          "label": "Bibliothèques"
+        },
+        "frameworks": {
+          "label": "Frameworks"
+        },
+        "db": {
+          "label": "Base de données"
+        },
+        "tools": {
+          "label": "Outils"
+        }
+      }
+    },
+    "contact": {
+      "form": {
+        "head": {
+          "label": "Me contacter"
+        },
+        "fields": {
+          "name": {
+            "label": "Nom",
+            "errors": {}
+          },
+          "email": {
+            "label": "Adresse mail",
+            "errors": {}
+          },
+          "message": {
+            "label": "Message",
+            "errors": {}
+          }
+        },
+        "submit": {
+          "label": "Envoyer"
+        }
+      }
+    }
+  }
+}
