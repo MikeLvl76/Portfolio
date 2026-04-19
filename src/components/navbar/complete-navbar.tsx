@@ -4,7 +4,8 @@ import { HomeIcon } from "lucide-react";
 import Navbar from "./navbar";
 import NavbarItem from "./navbar-item";
 import { Locale, useLocaleContext } from "../providers";
-import { Dropdown } from "../ui";
+import { Dropdown } from "../dropdown";
+import ThemeSwitch from "../switch/theme";
 
 export default function CompleteNavbar() {
   const { getLocaleNavbarContent, updateLocale, locale } = useLocaleContext();
@@ -36,7 +37,7 @@ export default function CompleteNavbar() {
             to="/contact"
           />
         </div>
-        <div className="self-start sm:self-auto sm:w-auto w-full p-2 text-[11px] sm:text-base lg:text-md font-bold hover:cursor-pointer focus:outline-none focus:ring-0 bg-slate-100 border border-slate-100 focus:border-slate-100">
+        <div className="flex flex-row gap-4 self-start sm:self-auto sm:w-auto w-full p-2 text-[11px] sm:text-base lg:text-md font-bold hover:cursor-pointer focus:outline-none focus:ring-0 bg-slate-100 border border-slate-100 focus:border-slate-100">
           <Dropdown
             value={locale.lang}
             values={[
@@ -46,6 +47,7 @@ export default function CompleteNavbar() {
             onChange={(value) => updateLocale(value as Locale["lang"])}
             className="sm:p-2"
           />
+          <ThemeSwitch />
         </div>
       </div>
     </Navbar>
