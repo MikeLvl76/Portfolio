@@ -5,6 +5,7 @@ import { useState, SubmitEvent } from "react";
 import z from "zod";
 import { $ZodFlattenedError } from "zod/v4/core";
 import ContactErrors from "./errors";
+import { useLocaleContext } from "@/components/providers/locale-provider";
 
 export default function Page() {
   const [form, setForm] = useState<Contact>({
@@ -17,6 +18,8 @@ export default function Page() {
       [K in keyof Contact]: string;
     }>["fieldErrors"]
   >();
+  const { getLocalePagesContent } = useLocaleContext();
+  const content = getLocalePagesContent().contact;
 
   const handleSubmit = (event: SubmitEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -37,11 +40,15 @@ export default function Page() {
   return (
     <div className="flex justify-center items-center pt-4 lg:pt-12 overscroll-y-auto">
       <div className="flex flex-col gap-4 p-6 shadow-2xl border border-slate-800 rounded-md min-w-1/3 sm:min-w-lg md:max-w-xl">
-        <h1 className="text-xl sm:text-2xl text-center">Contact me</h1>
+        <h1 className="text-xl sm:text-2xl text-center">
+          {content.form.head.label}
+        </h1>
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <div className="flex flex-col gap-1">
-            <label className="text-sm sm:text-base">Name</label>
+            <label className="text-sm sm:text-base">
+              {content.form.fields.name.label}
+            </label>
             <input
               type="text"
               value={form.name}
@@ -54,7 +61,9 @@ export default function Page() {
           </div>
 
           <div className="flex flex-col gap-1">
-            <label className="text-sm sm:text-base">Email</label>
+            <label className="text-sm sm:text-base">
+              {content.form.fields.email.label}
+            </label>
             <input
               type="email"
               value={form.email}
@@ -67,7 +76,9 @@ export default function Page() {
           </div>
 
           <div className="flex flex-col gap-1">
-            <label className="text-sm sm:text-base">Message</label>
+            <label className="text-sm sm:text-base">
+              {content.form.fields.message.label}
+            </label>
             <textarea
               value={form.message}
               onChange={(e) =>
@@ -83,7 +94,7 @@ export default function Page() {
               type="submit"
               className="bg-sky-500 text-slate-100 rounded-md px-4 py-2 text-sm sm:text-base hover:bg-sky-600 transition hover:cursor-pointer"
             >
-              Send
+              {content.form.submit.label}
             </button>
           </div>
         </form>

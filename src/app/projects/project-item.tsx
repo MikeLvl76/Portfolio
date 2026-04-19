@@ -1,14 +1,16 @@
 "use client";
 
-import { AssetInfos, basePath } from "@/components/hooks/use-assets-infos";
+import { ImageInfos } from "@/components/hooks";
 import { IconLink } from "@/components/icon-link";
 import { CodeIcon, ExternalLinkIcon } from "lucide-react";
 import Image from "next/image";
 import { SyntheticEvent, useRef, useState } from "react";
 
 type Props = {
-  info: AssetInfos;
+  info: ImageInfos;
 };
+
+const basePath = process.env.__NEXT_ROUTER_BASEPATH || "";
 
 export default function ProjectItem({ info }: Props) {
   const [mobileHoldPress, setMobileHoldPress] = useState(false);

@@ -1,25 +1,23 @@
 {
   "navbar": {
-    "items": {
-      "home": {
-        "title": "Accueil"
-      },
-      "about": {
-        "label": "A propos",
-        "title": "Une petite présentation sur moi"
-      },
-      "projects": {
-        "label": "Projets",
-        "title": "Liste de mes projets"
-      },
-      "skills": {
-        "label": "Compétences",
-        "title": "Langages et outils de programmation utilisés"
-      },
-      "contact": {
-        "label": "Me contacter",
-        "title": "N'hésitez pas à me contacter !"
-      }
+    "home": {
+      "title": "Accueil"
+    },
+    "about": {
+      "label": "A propos",
+      "title": "Une petite présentation sur moi"
+    },
+    "projects": {
+      "label": "Projets",
+      "title": "Liste de mes projets"
+    },
+    "skills": {
+      "label": "Compétences",
+      "title": "Langages et outils de programmation utilisés"
+    },
+    "contact": {
+      "label": "Me contacter",
+      "title": "N'hésitez pas à me contacter !"
     }
   },
   "pages": {
@@ -40,7 +38,7 @@
             "snake": {
               "alt": "Image du jeu Web Snake",
               "title": "Web Snake",
-              "desription": "Version web du célère jeu de Snake! Mangez la nourriture pour obtenir des points et attention aux bords !"
+              "description": "Version web du célère jeu de Snake! Mangez la nourriture pour obtenir des points et attention aux bords !"
             },
             "maze": {
               "alt": "Image du jeu de labyrinthe",

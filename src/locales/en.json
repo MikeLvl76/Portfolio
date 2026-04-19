@@ -1,25 +1,23 @@
 {
   "navbar": {
-    "items": {
-      "home": {
-        "title": "Return to homepage"
-      },
-      "about": {
-        "label": "About me",
-        "title": "View a little presentation of me"
-      },
-      "projects": {
-        "label": "Projects",
-        "title": "View my projects"
-      },
-      "skills": {
-        "label": "Skills",
-        "title": "View languages and tools I use"
-      },
-      "contact": {
-        "label": "Contact me",
-        "title": "If you want to contact me"
-      }
+    "home": {
+      "title": "Return to homepage"
+    },
+    "about": {
+      "label": "About me",
+      "title": "View a little presentation of me"
+    },
+    "projects": {
+      "label": "Projects",
+      "title": "View my projects"
+    },
+    "skills": {
+      "label": "Skills",
+      "title": "View languages and tools I use"
+    },
+    "contact": {
+      "label": "Contact me",
+      "title": "If you want to contact me"
     }
   },
   "pages": {
@@ -40,7 +38,7 @@
             "snake": {
               "alt": "Web snake image",
               "title": "Web Snake",
-              "desription": "Web version of the famous Snake game! Eat food to earn points and avoid hitting bounds!"
+              "description": "Web version of the famous Snake game! Eat food to earn points and avoid hitting bounds!"
             },
             "maze": {
               "alt": "Web Maze image",

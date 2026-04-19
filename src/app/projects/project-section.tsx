@@ -1,8 +1,8 @@
 "use client";
 
-import { useAssetsInfos } from "@/components/hooks/use-assets-infos";
 import ProjectItem from "./project-item";
 import { Section } from "@/components/section";
+import { useImagesInfos } from "@/components/hooks/use-images-infos";
 
 type Props = {
   title: string;
@@ -10,7 +10,7 @@ type Props = {
 };
 
 export default function ProjectSection({ title, assetDirname }: Props) {
-  const infos = useAssetsInfos({ dir: assetDirname });
+  const infos = useImagesInfos({ dir: assetDirname });
 
   return (
     <Section

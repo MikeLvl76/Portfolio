@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { CompleteNavbar } from "@/components/navbar";
+import { LocaleProvider } from "@/components/providers/locale-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,8 +29,10 @@ export default function RootLayout({
       <body
         className={`flex flex-col justify-start gap-4 ${geistSans.variable} ${geistMono.variable} antialiased max-w-screen min-h-screen`}
       >
-        <CompleteNavbar />
-        {children}
+        <LocaleProvider>
+          <CompleteNavbar />
+          {children}
+        </LocaleProvider>
       </body>
     </html>
   );

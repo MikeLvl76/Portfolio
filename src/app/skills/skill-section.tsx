@@ -1,6 +1,6 @@
 "use client";
 
-import { useAssetsInfos } from "@/components/hooks/use-assets-infos";
+import { useIconsInfos } from "@/components/hooks";
 import { Section } from "@/components/section";
 import Image from "next/image";
 
@@ -10,7 +10,7 @@ type Props = {
 };
 
 export default function SkillSection({ title, assetDirname }: Props) {
-  const infos = useAssetsInfos({ dir: assetDirname });
+  const infos = useIconsInfos({ dir: assetDirname });
 
   return (
     <Section
@@ -23,7 +23,7 @@ export default function SkillSection({ title, assetDirname }: Props) {
           height={96}
           alt={alt}
           title={title}
-          loading="lazy"
+          loading="eager"
           className="hover:cursor-pointer p-2"
         />
       ))}
