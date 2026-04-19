@@ -2,6 +2,7 @@
 
 import { ImageInfos } from "@/components/hooks";
 import { IconLink } from "@/components/icon-link";
+import { FALLBACK_IMG_PATH } from "@/lib/paths";
 import { CodeIcon, ExternalLinkIcon } from "lucide-react";
 import Image from "next/image";
 import { SyntheticEvent, useRef, useState } from "react";
@@ -10,14 +11,11 @@ type Props = {
   info: ImageInfos;
 };
 
-const basePath = process.env.__NEXT_ROUTER_BASEPATH || "";
-
 export default function ProjectItem({ info }: Props) {
   const [mobileHoldPress, setMobileHoldPress] = useState(false);
   const timer = useRef<NodeJS.Timeout>(null);
   const [imageError, setImageError] =
     useState<SyntheticEvent<HTMLImageElement, Event>>();
-  const fallbackPath = `${basePath}/error/image-not-found.svg`;
 
   const handlePressEnd = () => {
     if (timer.current) {
@@ -43,7 +41,7 @@ export default function ProjectItem({ info }: Props) {
     >
       <div className="relative w-full h-full group overflow-hidden">
         <Image
-          src={imageError ? fallbackPath : info.filepath}
+          src={imageError ? FALLBACK_IMG_PATH : info.filepath}
           alt={imageError ? "Error image" : info.alt}
           width={0}
           height={0}
