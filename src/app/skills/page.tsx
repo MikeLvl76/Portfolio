@@ -50,7 +50,7 @@ export default function Page() {
   ));
 
   return (
-    <div className="flex flex-col items-start justify-start gap-2 sm:gap-4 max-w-full min-h-screen overscroll-y-auto dark:bg-slate-900">
+    <div className="flex flex-col items-start justify-start pt-2 sm:pt-6 gap-2 sm:gap-4 max-w-full min-h-screen overscroll-y-auto dark:bg-slate-900">
       {...skillSections}
     </div>
   );

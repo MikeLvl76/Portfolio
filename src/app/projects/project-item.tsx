@@ -1,8 +1,9 @@
 "use client";
 
+import { FallbackIcon } from "@/components/fallback";
 import { ImageInfos } from "@/components/hooks";
 import { IconLink } from "@/components/icon-link";
-import { FALLBACK_IMG_PATH } from "@/lib/paths";
+import { useThemeContext } from "@/components/providers/theme-provider";
 import { CodeIcon, ExternalLinkIcon } from "lucide-react";
 import Image from "next/image";
 import { SyntheticEvent, useRef, useState } from "react";
@@ -16,6 +17,7 @@ export default function ProjectItem({ info }: Props) {
   const timer = useRef<NodeJS.Timeout>(null);
   const [imageError, setImageError] =
     useState<SyntheticEvent<HTMLImageElement, Event>>();
+  const { theme } = useThemeContext();
 
   const handlePressEnd = () => {
     if (timer.current) {
@@ -40,15 +42,22 @@ export default function ProjectItem({ info }: Props) {
       className="flex flex-row min-w-36 min-h-36 sm:min-w-48 sm:min-h-48 md:min-w-60 md:min-h-60 rounded-md shadow-lg/30 touch-none select-none"
     >
       <div className="relative w-full h-full group overflow-hidden">
-        <Image
-          src={imageError ? FALLBACK_IMG_PATH : info.filepath}
-          alt={imageError ? "Error image" : info.alt}
-          width={0}
-          height={0}
-          loading="eager"
-          onError={setImageError}
-          className="hover:cursor-pointer object-fill size-36 sm:size-48 md:size-60 rounded-md dark:bg-slate-100"
-        />
+        {imageError ? (
+          <FallbackIcon
+            fill={theme === "dark" ? "#111111" : "#eeeeee"}
+            className="flex self-end justify-self-center hover:cursor-pointer size-36 sm:size-48 md:size-60 bg-slate-900 dark:bg-slate-100 rounded-md"
+          />
+        ) : (
+          <Image
+            src={info.filepath}
+            alt={info.alt}
+            width={0}
+            height={0}
+            loading="eager"
+            onError={setImageError}
+            className="hover:cursor-pointer object-fill size-36 sm:size-48 md:size-60 rounded-md bg-slate-900 dark:bg-slate-100"
+          />
+        )}
         <div
           className={`absolute bottom-0 left-0 w-full h-full flex gap-2 translate-y-full bg-slate-900 group-hover:backdrop-blur-lg backdrop-brightness-75 group-hover:translate-y-0
           transition-all duration-500 hover:cursor-pointer ${
