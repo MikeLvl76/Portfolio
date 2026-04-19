@@ -2,7 +2,7 @@
 
 import { useMemo } from "react";
 import SkillSection from "./skill-section";
-import { useLocaleContext } from "@/components/providers/locale-provider";
+import { useLocaleContext } from "@/components/providers";
 
 type Section = {
   title: string;

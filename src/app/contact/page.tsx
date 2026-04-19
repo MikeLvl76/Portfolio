@@ -5,7 +5,7 @@ import { useState, SubmitEvent } from "react";
 import z from "zod";
 import { $ZodFlattenedError } from "zod/v4/core";
 import ContactErrors from "./errors";
-import { useLocaleContext } from "@/components/providers/locale-provider";
+import { useLocaleContext } from "@/components/providers";
 
 export default function Page() {
   const [form, setForm] = useState<Contact>({

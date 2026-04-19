@@ -2,26 +2,24 @@
 
 import {
   createContext,
-  Dispatch,
   ReactNode,
-  SetStateAction,
   useContext,
   useEffect,
   useState,
 } from "react";
 
-import * as DEFAULT_LOCALE_CONTENT from "../../locales/en.json";
-import * as FR_LOCALE_CONTENT from "../../locales/fr.json";
+import DEFAULT_LOCALE_CONTENT from "../../locales/en.json";
+import FR_LOCALE_CONTENT from "../../locales/fr.json";
 
 type Lang = "en" | "fr";
-type Locale = {
+export type Locale = {
   lang: Lang;
   content: typeof DEFAULT_LOCALE_CONTENT;
 };
 
 type LocaleContextType = {
   locale: Locale;
-  setLocale: Dispatch<SetStateAction<Locale>>;
+  updateLocale: (lang: Lang) => void;
   getLocaleNavbarContent: () => Locale["content"]["navbar"];
   getLocalePagesContent: () => Locale["content"]["pages"];
 };
@@ -31,7 +29,7 @@ const LocaleContext = createContext<LocaleContextType>({
     lang: "en",
     content: DEFAULT_LOCALE_CONTENT,
   },
-  setLocale: () => {},
+  updateLocale: () => {},
   getLocaleNavbarContent: () => DEFAULT_LOCALE_CONTENT["navbar"],
   getLocalePagesContent: () => DEFAULT_LOCALE_CONTENT["pages"],
 });
@@ -69,12 +67,23 @@ export function LocaleProvider({ children }: Props) {
 
   const getLocaleNavbarContent = () => locale.content.navbar;
   const getLocalePagesContent = () => locale.content.pages;
+  const updateLocale = (lang: Lang) => {
+    if (lang === "en") {
+      setLocale({ lang: "en", content: DEFAULT_LOCALE_CONTENT });
+      return;
+    }
+
+    if (lang === "fr") {
+      setLocale({ lang: "fr", content: FR_LOCALE_CONTENT });
+      return;
+    }
+  };
 
   return (
     <LocaleContext.Provider
       value={{
         locale,
-        setLocale,
+        updateLocale,
         getLocaleNavbarContent,
         getLocalePagesContent,
       }}

@@ -1,6 +1,6 @@
 "use client";
 
-import { useLocaleContext } from "@/components/providers/locale-provider";
+import { useLocaleContext } from "@/components/providers";
 
 export default function Home() {
   const { getLocalePagesContent } = useLocaleContext();

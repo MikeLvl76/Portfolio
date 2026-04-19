@@ -1,7 +1,7 @@
 "use client";
 
 import { Asset } from "@/types/asset";
-import { useLocaleContext } from "../providers/locale-provider";
+import { useLocaleContext } from "../providers";
 import { useMemo } from "react";
 import { BASE_PATH } from "@/lib/paths";
 
