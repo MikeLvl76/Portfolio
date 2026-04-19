@@ -38,15 +38,15 @@ export default function Page() {
   };
 
   return (
-    <div className="flex justify-center items-center pt-4 lg:pt-12 overscroll-y-auto">
+    <div className="flex justify-center items-start pt-4 sm:pt-12 w-full min-h-screen overscroll-y-auto dark:bg-slate-900">
       <div className="flex flex-col gap-4 p-6 shadow-2xl border border-slate-800 rounded-md min-w-1/3 sm:min-w-lg md:max-w-xl">
-        <h1 className="text-xl sm:text-2xl text-center">
+        <h1 className="text-xl sm:text-2xl text-center dark:text-slate-100">
           {content.form.head.label}
         </h1>
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <div className="flex flex-col gap-1">
-            <label className="text-sm sm:text-base">
+            <label className="text-sm sm:text-base dark:text-slate-100">
               {content.form.fields.name.label}
             </label>
             <input
@@ -55,13 +55,13 @@ export default function Page() {
               onChange={(e) =>
                 setForm((prev) => ({ ...prev, name: e.target.value }))
               }
-              className="w-full border border-slate-800 rounded-md p-2 text-sm sm:text-base"
+              className="w-full border border-slate-800 rounded-md p-2 text-sm sm:text-base dark:text-slate-100"
             />
             <ContactErrors fieldName="name" errors={errors} />
           </div>
 
           <div className="flex flex-col gap-1">
-            <label className="text-sm sm:text-base">
+            <label className="text-sm sm:text-base dark:text-slate-100">
               {content.form.fields.email.label}
             </label>
             <input
@@ -70,13 +70,13 @@ export default function Page() {
               onChange={(e) =>
                 setForm((prev) => ({ ...prev, email: e.target.value }))
               }
-              className="w-full border border-slate-800 rounded-md p-2 text-sm sm:text-base"
+              className="w-full border border-slate-800 rounded-md p-2 text-sm sm:text-base dark:text-slate-100"
             />
             <ContactErrors fieldName="email" errors={errors} />
           </div>
 
           <div className="flex flex-col gap-1">
-            <label className="text-sm sm:text-base">
+            <label className="text-sm sm:text-base dark:text-slate-100">
               {content.form.fields.message.label}
             </label>
             <textarea
@@ -84,7 +84,7 @@ export default function Page() {
               onChange={(e) =>
                 setForm((prev) => ({ ...prev, message: e.target.value }))
               }
-              className="w-full border border-slate-800 rounded-md p-2 min-h-30 sm:min-h-37.5 text-sm sm:text-base"
+              className="w-full border border-slate-800 rounded-md p-2 min-h-30 sm:min-h-37.5 text-sm sm:text-base dark:text-slate-100"
             />
             <ContactErrors fieldName="message" errors={errors} />
           </div>
@@ -92,7 +92,7 @@ export default function Page() {
           <div className="flex justify-end">
             <button
               type="submit"
-              className="bg-sky-500 text-slate-100 rounded-md px-4 py-2 text-sm sm:text-base hover:bg-sky-600 transition hover:cursor-pointer"
+              className="bg-sky-500 text-slate-100 rounded-md px-4 py-2 text-sm sm:text-base hover:bg-sky-600 transition hover:cursor-pointer dark:text-slate-100"
             >
               {content.form.submit.label}
             </button>

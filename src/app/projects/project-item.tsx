@@ -47,7 +47,7 @@ export default function ProjectItem({ info }: Props) {
           height={0}
           loading="eager"
           onError={setImageError}
-          className="hover:cursor-pointer object-fill size-36 sm:size-48 md:size-60 rounded-md"
+          className="hover:cursor-pointer object-fill size-36 sm:size-48 md:size-60 rounded-md dark:bg-slate-100"
         />
         <div
           className={`absolute bottom-0 left-0 w-full h-full flex gap-2 translate-y-full bg-slate-900 group-hover:backdrop-blur-lg backdrop-brightness-75 group-hover:translate-y-0

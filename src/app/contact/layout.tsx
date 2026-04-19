@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function Layout({ children }: Props) {
   return (
-    <div className="flex justify-center items-center w-screen max-h-screen">
+    <div className="flex max-w-screen min-h-screen dark:bg-slate-900">
       {children}
     </div>
   );

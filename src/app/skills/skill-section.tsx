@@ -24,10 +24,10 @@ export default function SkillSection({ title, assetDirname }: Props) {
           alt={alt}
           title={title}
           loading="eager"
-          className="hover:cursor-pointer p-2"
+          className="hover:cursor-pointer p-2 dark:bg-slate-100 dark:rounded-full dark:p-2"
         />
       ))}
-      className="grid grid-cols-3 gap-1 sm:flex sm:flex-row sm:flex-wrap sm:items-start"
+      className="grid grid-cols-3 gap-1 sm:flex sm:flex-row sm:flex-wrap sm:items-start dark:bg-slate-900"
     />
   );
 }

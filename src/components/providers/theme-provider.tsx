@@ -49,10 +49,9 @@ export function ThemeProvider({ children }: Props) {
     const _theme = localStorage.getItem("theme") as Theme | null;
     setTheme(_theme || "light");
 
-    if (theme === "dark") {
+    if (_theme === "dark") {
       document.documentElement.classList.add("dark");
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
