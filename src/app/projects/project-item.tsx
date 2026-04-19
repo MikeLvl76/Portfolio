@@ -81,7 +81,7 @@ export default function ProjectItem({ info }: Props) {
                   iconProps={{
                     color: "#eeeeee",
                     className:
-                      "size-8 sm:size-9 rounded-full hover:cursor-pointer p-1",
+                      "size-8 sm:size-9 rounded-full hover:cursor-pointer p-1 focus:outline-none focus:ring-0",
                   }}
                   linkProps={{
                     target: "_blank",
@@ -98,7 +98,7 @@ export default function ProjectItem({ info }: Props) {
                   iconProps={{
                     color: "#eeeeee",
                     className:
-                      "size-8 sm:size-9 rounded-full hover:cursor-pointer p-1",
+                      "size-8 sm:size-9 rounded-full hover:cursor-pointer p-1 focus:outline-none focus:ring-0",
                   }}
                   linkProps={{
                     target: "_blank",

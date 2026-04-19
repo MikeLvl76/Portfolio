@@ -69,6 +69,11 @@
               "alt": "Web Games logo",
               "title": "Web Games",
               "description": "Play on varied games!"
+            },
+            "portfolio": {
+              "alt": "Portfolio logo",
+              "title": "Portfolio",
+              "description": "You are already here visiting my portfolio."
             }
           }
         },

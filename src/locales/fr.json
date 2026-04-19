@@ -69,6 +69,11 @@
               "alt": "Logo du site Web Games",
               "title": "Web Games",
               "description": "Site regroupant des jeux connus jouables sur navigateur. Injouable sur petits écrans pour le moment."
+            },
+            "portfolio": {
+              "alt": "Portfolio logo",
+              "title": "Portfolio",
+              "description": "Vous êtes déjà en train de visiter mon portfolio."
             }
           }
         },

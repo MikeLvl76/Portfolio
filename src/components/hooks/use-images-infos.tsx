@@ -166,6 +166,15 @@ export function useImagesInfos({ dir }: Params) {
           code: `${BASE_REPO_URL}/Classroom`,
         },
       },
+      {
+        filepath: `${BASE_PATH}/images/ts/portfolio.png`,
+        alt: content.sections.ts.items.portfolio.alt,
+        title: content.sections.ts.items.portfolio.title,
+        description: content.sections.ts.items.portfolio.description,
+        externalLinks: {
+          code: `${BASE_REPO_URL}/Portfolio`,
+        },
+      },
     ],
     [
       content.sections.java.items,
