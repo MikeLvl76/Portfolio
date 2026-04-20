@@ -14,7 +14,7 @@ export default function ContactErrors({ fieldName, errors }: Props) {
   const messages = errors?.[fieldName] ?? [];
 
   const errorMessages = messages.map((msg, i) => (
-    <p key={i} className="text-[12px] sm:text-sm text-red-500">
+    <p key={i} className="text-[12px] sm:text-sm text-red-500 dark:text-red-300 px-1">
       {msg}
     </p>
   ));

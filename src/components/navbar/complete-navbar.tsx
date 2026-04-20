@@ -12,29 +12,38 @@ export default function CompleteNavbar() {
   const content = getLocaleNavbarContent();
 
   return (
-    <Navbar className="sticky top-0 z-50 w-full bg-slate-100 dark:bg-slate-900 shadow-xl/30 dark:shadow-xl/30 dark:shadow-slate-100 px-4 md:px-6 lg:px-8 py-3">
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4 md:gap-6 dark:bg-slate-900">
+    <Navbar className="sticky top-0 z-50 w-full bg-nav-light dark:bg-nav-dark shadow-xl/30 px-4 md:px-6 lg:px-8 py-3">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4 md:gap-6 bg-nav-light dark:bg-nav-dark">
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 flex-1">
-          <NavbarItem icon={HomeIcon} title={content.home.title} to="/" />
+          <NavbarItem
+            icon={HomeIcon}
+            title={content.home.title}
+            to="/"
+            className="flex flex-row items-center justify-center gap-2 hover:decoration-0 sm:p-2 w-fit h-fit md:h-full hover:bg-[#d7d3d4] dark:hover:bg-[#555555] rounded-sm"
+          />
           <NavbarItem
             label={content.about.label}
             title={content.about.title}
             to="/about-me"
+            className="flex flex-row items-center justify-center gap-2 hover:decoration-0 sm:p-2 w-fit h-fit md:h-full hover:bg-[#d7d3d4] dark:hover:bg-[#555555] rounded-sm"
           />
           <NavbarItem
             label={content.projects.label}
             title={content.projects.title}
             to="/projects"
+            className="flex flex-row items-center justify-center gap-2 hover:decoration-0 sm:p-2 w-fit h-fit md:h-full hover:bg-[#d7d3d4] dark:hover:bg-[#555555] rounded-sm"
           />
           <NavbarItem
             label={content.skills.label}
             title={content.skills.title}
             to="/skills"
+            className="flex flex-row items-center justify-center gap-2 hover:decoration-0 sm:p-2 w-fit h-fit md:h-full hover:bg-[#d7d3d4] dark:hover:bg-[#555555] rounded-sm"
           />
           <NavbarItem
             label={content.contact.label}
             title={content.contact.title}
             to="/contact"
+            className="flex flex-row items-center justify-center gap-2 hover:decoration-0 sm:p-2 w-fit h-fit md:h-full hover:bg-[#d7d3d4] dark:hover:bg-[#555555] rounded-sm"
           />
         </div>
         <div className="flex flex-row gap-4 self-start sm:self-auto sm:w-auto w-full p-2 text-[11px] sm:text-base lg:text-md font-bold hover:cursor-pointer focus:outline-none focus:ring-0 bg-slate-100 border border-slate-100 focus:border-slate-100 dark:bg-slate-900 dark:border-slate-900 dark:focus:border-slate-900">
@@ -45,7 +54,7 @@ export default function CompleteNavbar() {
               { label: "Français", value: "fr" },
             ]}
             onChange={(value) => updateLocale(value as Locale["lang"])}
-            className="sm:p-2 dark:bg-slate-900 dark:text-slate-100"
+            className="sm:p-2 bg-nav-light text-text-dark dark:bg-nav-dark dark:text-text-light"
           />
           <ThemeSwitch />
         </div>

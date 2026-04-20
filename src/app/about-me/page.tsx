@@ -1,5 +1,5 @@
 "use client";
 
 export default function Page() {
-  return <div>About me</div>;
+  return <div className="flex bg-bg-light dark:bg-bg-dark">About me</div>;
 }

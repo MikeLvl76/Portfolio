@@ -21,7 +21,7 @@ export default function Dropdown({
     <option
       key={i}
       value={value}
-      className="text-[11px] sm:text-base lg:text-md font-bold hover:cursor-pointer hover:bg-slate-300 dark:bg-slate-900 dark:text-slate-100 dark:hover:bg-slate-700"
+      className="text-[11px] sm:text-base lg:text-md font-bold hover:cursor-pointer hover:bg-bg-light dark:bg-bg-dark dark:text-text-light dark:hover:bg-slate-700"
     >
       {label}
     </option>

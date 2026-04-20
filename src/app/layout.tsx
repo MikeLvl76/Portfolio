@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`flex flex-col justify-start antialiased max-w-screen min-h-screen dark:bg-slate-900`}
+        className={`flex flex-col justify-start antialiased max-w-screen min-h-screen bg-bg-light dark:bg-bg-dark`}
       >
         <ThemeProvider>
           <LocaleProvider>

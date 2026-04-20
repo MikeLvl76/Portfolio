@@ -32,7 +32,7 @@ export default function Page() {
   ));
 
   return (
-    <div className="flex flex-col items-start justify-start gap-2 sm:gap-4 pt-4 sm:pt-6 max-w-full min-h-screen overscroll-y-auto dark:bg-slate-900">
+    <div className="flex flex-col items-start justify-start gap-2 sm:gap-4 pt-4 sm:pt-6 max-w-full min-h-screen overscroll-y-auto bg-bg-light dark:bg-bg-dark">
       {...projectSections}
     </div>
   );

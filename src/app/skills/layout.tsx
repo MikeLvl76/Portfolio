@@ -11,5 +11,9 @@ export const metadata: Metadata = {
 };
 
 export default function Layout({ children }: Props) {
-  return <div className="flex max-w-screen min-h-screen dark:bg-slate-900">{children}</div>;
+  return (
+    <div className="flex max-w-screen min-h-screen bg-bg-light dark:bg-bg-dark">
+      {children}
+    </div>
+  );
 }
