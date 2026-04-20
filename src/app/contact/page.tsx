@@ -6,6 +6,7 @@ import z from "zod";
 import { $ZodFlattenedError } from "zod/v4/core";
 import ContactErrors from "./errors";
 import { useLocaleContext } from "@/components/providers";
+import { send } from "@/lib/mailer";
 
 export default function Page() {
   const [form, setForm] = useState<Contact>({
@@ -21,7 +22,7 @@ export default function Page() {
   const { getLocalePagesContent } = useLocaleContext();
   const content = getLocalePagesContent().contact;
 
-  const handleSubmit = (event: SubmitEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: SubmitEvent<HTMLFormElement>) => {
     event.preventDefault();
     const result = contactSchema.safeParse(form);
 
@@ -33,8 +34,12 @@ export default function Page() {
 
     setErrors(undefined);
 
-    alert("TODO: send mail with form data");
-    console.log("Data: ", result.data);
+    try {
+      const res = await send(result.data);
+      console.log(res);
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   return (

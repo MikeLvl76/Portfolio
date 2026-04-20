@@ -12,6 +12,9 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
+  logging: {
+    serverFunctions: false,
+  },
 };
 
 export default nextConfig;
