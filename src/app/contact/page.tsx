@@ -1,6 +1,6 @@
 "use client";
 
-import { Contact, contactSchema } from "@/lib/zod/contact.schema";
+import { Contact, getContactSchema } from "@/lib/zod/contact.schema";
 import { useState } from "react";
 import z from "zod";
 import { $ZodFlattenedError } from "zod/v4/core";
@@ -24,6 +24,11 @@ export default function Page() {
   const { toast } = useToast();
 
   const action = async (formData: FormData) => {
+    const contactSchema = getContactSchema({
+      name: content.form.fields.name.errors,
+      email: content.form.fields.email.errors,
+      message: content.form.fields.message.errors,
+    });
     const result = contactSchema.safeParse(
       Object.fromEntries(formData.entries())
     );

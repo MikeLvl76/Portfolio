@@ -213,15 +213,23 @@
         "fields": {
           "name": {
             "label": "Nom",
-            "errors": {}
+            "errors": {
+              "min": "Doit contenir au moins un caractère",
+              "max": "64 caractères max."
+            }
           },
           "email": {
             "label": "Adresse mail",
-            "errors": {}
+            "errors": {
+              "format": "Format invalide"
+            }
           },
           "message": {
             "label": "Message",
-            "errors": {}
+            "errors": {
+              "min": "Doit contenir au moins un caractère",
+              "max": "64 caractères max."
+            }
           }
         },
         "submit": {
