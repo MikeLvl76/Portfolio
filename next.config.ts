@@ -1,11 +1,6 @@
 import type { NextConfig } from "next";
 
-const isProd = process.env.NODE_ENV === "production";
-const repo = process.env.REPO_NAME;
-
 const nextConfig: NextConfig = {
-  basePath: isProd && repo ? `/${repo}` : "",
-  assetPrefix: isProd && repo ? `/${repo}/` : "",
   reactStrictMode: true,
   trailingSlash: true,
   images: {
