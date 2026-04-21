@@ -26,7 +26,15 @@
         "label": "Welcome"
       },
       "text": {
-        "label": "You can navigate on my portfolio by using the navigation bar above."
+        "label": "Full-stack developer building modern web applications. Interested in games, apps, and interactive experiences."
+      },
+      "links": {
+        "projects": {
+          "name": "Explore projects"
+        },
+        "contact": {
+          "name": "Contact me"
+        }
       }
     },
     "about": {

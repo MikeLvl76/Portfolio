@@ -26,7 +26,15 @@
         "label": "Bienvenue"
       },
       "text": {
-        "label": "Naviguez à l'aide de la barre de navigation au-dessus"
+        "label": "Développeur full-stack aimant développer des applications web modernes et intéressé par le développement mobile, de jeux ou autre."
+      },
+      "links": {
+        "projects": {
+          "name": "Explorer mes projects"
+        },
+        "contact": {
+          "name": "Me contacter"
+        }
       }
     },
     "about": {
