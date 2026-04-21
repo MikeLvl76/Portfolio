@@ -22,7 +22,7 @@ export default function NavbarItem({
   return (
     <Link href={to} title={title} className={cn(className)}>
       {Icon && (
-        <Icon className="hover:cursor-pointer size-4 sm:size-6 text-text-dark dark:text-text-light" />
+        <Icon className="hover:cursor-pointer size-6 sm:size-8 text-text-dark dark:text-text-light" />
       )}
       {label && (
         <label className="text-[11px] sm:text-base lg:text-lg font-bold hover:cursor-pointer text-text-dark dark:text-text-light">
