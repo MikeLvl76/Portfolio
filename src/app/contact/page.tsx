@@ -1,7 +1,7 @@
 "use client";
 
 import { Contact, contactSchema } from "@/lib/zod/contact.schema";
-import { useState, SubmitEvent } from "react";
+import { useState } from "react";
 import z from "zod";
 import { $ZodFlattenedError } from "zod/v4/core";
 import ContactErrors from "./errors";
@@ -23,9 +23,10 @@ export default function Page() {
   const content = getLocalePagesContent().contact;
   const { toast } = useToast();
 
-  const handleSubmit = async (event: SubmitEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const result = contactSchema.safeParse(form);
+  const action = async (formData: FormData) => {
+    const result = contactSchema.safeParse(
+      Object.fromEntries(formData.entries())
+    );
 
     if (!result.success) {
       const errors = z.flattenError(result.error);
@@ -51,13 +52,14 @@ export default function Page() {
           {content.form.head.label}
         </h1>
 
-        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+        <form action={action} className="flex flex-col gap-4">
           <div className="flex flex-col gap-1">
             <label className="text-sm sm:text-base text-text-dark dark:text-text-light px-1">
               {content.form.fields.name.label}
             </label>
             <input
               type="text"
+              name="name"
               value={form.name}
               onChange={(e) =>
                 setForm((prev) => ({ ...prev, name: e.target.value }))
@@ -73,6 +75,7 @@ export default function Page() {
             </label>
             <input
               type="email"
+              name="email"
               value={form.email}
               onChange={(e) =>
                 setForm((prev) => ({ ...prev, email: e.target.value }))
@@ -88,6 +91,7 @@ export default function Page() {
             </label>
             <textarea
               value={form.message}
+              name="message"
               onChange={(e) =>
                 setForm((prev) => ({ ...prev, message: e.target.value }))
               }
