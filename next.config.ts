@@ -6,7 +6,6 @@ const repo = process.env.REPO_NAME;
 const nextConfig: NextConfig = {
   basePath: isProd && repo ? `/${repo}` : "",
   assetPrefix: isProd && repo ? `/${repo}/` : "",
-  output: "export",
   reactStrictMode: true,
   trailingSlash: true,
   images: {
