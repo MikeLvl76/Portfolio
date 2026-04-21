@@ -5,7 +5,7 @@ import { useState, SubmitEvent } from "react";
 import z from "zod";
 import { $ZodFlattenedError } from "zod/v4/core";
 import ContactErrors from "./errors";
-import { useLocaleContext } from "@/components/providers";
+import { useLocaleContext, useToast } from "@/components/providers";
 import { send } from "@/lib/mailer";
 
 export default function Page() {
@@ -21,6 +21,7 @@ export default function Page() {
   >();
   const { getLocalePagesContent } = useLocaleContext();
   const content = getLocalePagesContent().contact;
+  const { toast } = useToast();
 
   const handleSubmit = async (event: SubmitEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -36,9 +37,10 @@ export default function Page() {
 
     try {
       const res = await send(result.data);
-      console.log(res);
+      toast(res.message, "success", 3000);
     } catch (err) {
       console.error(err);
+      toast((err as Error).message, "error", 3000);
     }
   };
 

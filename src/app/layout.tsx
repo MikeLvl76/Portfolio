@@ -1,7 +1,11 @@
 import { Metadata } from "next";
 import "./globals.css";
 import { CompleteNavbar } from "@/components/navbar";
-import { LocaleProvider, ThemeProvider } from "@/components/providers";
+import {
+  LocaleProvider,
+  ThemeProvider,
+  ToastProvider,
+} from "@/components/providers";
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -18,12 +22,14 @@ export default function RootLayout({
       <body
         className={`flex flex-col justify-start antialiased max-w-screen min-h-screen bg-bg-light dark:bg-bg-dark`}
       >
-        <ThemeProvider>
-          <LocaleProvider>
-            <CompleteNavbar />
-            {children}
-          </LocaleProvider>
-        </ThemeProvider>
+        <ToastProvider>
+          <ThemeProvider>
+            <LocaleProvider>
+              <CompleteNavbar />
+              {children}
+            </LocaleProvider>
+          </ThemeProvider>
+        </ToastProvider>
       </body>
     </html>
   );
