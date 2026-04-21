@@ -29,7 +29,51 @@
         "label": "You can navigate on my portfolio by using the navigation bar above."
       }
     },
-    "about": {},
+    "about": {
+      "h1": {
+        "label": "Hi I'm Mickaël -- a fullstack developer"
+      },
+      "lists": [
+        {
+          "name": "What I do",
+          "items": [
+            "Full stack development mainly in TypeScript with popular frameworks like Nest.js for backend and NextJS for frontend.",
+            "Small programs in Python, sometimes using libs such as matplotlib for example",
+            "Small programs in Java, sometimes just to experiment",
+            "Developping small games"
+          ]
+        },
+        {
+          "name": "Experiences",
+          "items": [
+            "Contributed to a SaaS platform development, building backend features with TypeScript (tRPC) and managing database architecture using Supabase and Prisma (including migrations, RLS, and deployment).",
+            "Enhanced UI and development workflow, integrating TailwindCSS for styling and using GitHub for version control and collaboration.",
+            "Developed full-stack web features with PHP (Symfony), including server logic, database management (with PostgreSQL), and Stripe payment integration.",
+            "Built and styled frontend views using Twig and Bootstrap, and managed version control with GitLab."
+          ]
+        },
+        {
+          "name": "Strengths",
+          "items": [
+            "Adaptability",
+            "Quick learning",
+            "Curious",
+            "Self-learning",
+            "Motivated to improve"
+          ]
+        },
+        {
+          "name": "Interests",
+          "items": [
+            "Videogames",
+            "Programming",
+            "Football (Soccer for american people)",
+            "Weight-lifting",
+            "Mangas & animes"
+          ]
+        }
+      ]
+    },
     "projects": {
       "sections": {
         "js": {

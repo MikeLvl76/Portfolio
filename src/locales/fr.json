@@ -29,7 +29,51 @@
         "label": "Naviguez à l'aide de la barre de navigation au-dessus"
       }
     },
-    "about": {},
+    "about": {
+      "h1": {
+        "label": "Hey je suis Mickaël -- un développeur fullstack"
+      },
+      "lists": [
+        {
+          "name": "Ce que je fais",
+          "items": [
+            "Développement fullstack principalement en TypeScript et en utilisant des frameworks tels que Nest.js pour le côté backend ou NextJS pour le côté frontend.",
+            "Quelques petits projets en Python, parfois en utilisant des bibliothèques connues telles que matplotlib par exemple.",
+            "Quelques petits projets en Java, souvent des expérimentations.",
+            "Développement de quelques petits jeux."
+          ]
+        },
+        {
+          "name": "Expériences professionnelles",
+          "items": [
+            "Contribution au développement d’une plateforme SaaS, incluant des fonctionnalités backend en TypeScript (tRPC) et la gestion de l’architecture de base de données avec Supabase et Prisma (migrations, RLS, déploiement).",
+            "Amélioration de l’interface utilisateur et du workflow de développement, avec l’intégration de TailwindCSS pour le design et l’utilisation de GitHub pour la gestion de version et la collaboration.",
+            "Développement de fonctionnalités web full-stack en PHP (Symfony), incluant la logique serveur, la gestion de base de données (avec PostgreSQL) et l’intégration des paiements via Stripe.",
+            "Création et intégration d’interfaces frontend, avec Twig et Bootstrap, ainsi que la gestion du code source via GitLab."
+          ]
+        },
+        {
+          "name": "Forces",
+          "items": [
+            "Adaptabilité",
+            "Grande vitesse d'apprentissage",
+            "Curieux",
+            "Autonome",
+            "Motivé pour s'améliorer"
+          ]
+        },
+        {
+          "name": "Intérêts",
+          "items": [
+            "Jeux-vidéos",
+            "Programmations",
+            "Football (ou soccer pour les personnes américaines)",
+            "Musculation",
+            "Mangas & animes"
+          ]
+        }
+      ]
+    },
     "projects": {
       "sections": {
         "js": {
