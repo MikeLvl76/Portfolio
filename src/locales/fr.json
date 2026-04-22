@@ -26,7 +26,7 @@
         "label": "Bienvenue"
       },
       "text": {
-        "label": "Développeur full-stack aimant développer des applications web modernes et intéressé par le développement mobile, de jeux ou autre."
+        "label": "Développeur aimant développer des applications web modernes et intéressé par le développement mobile, de jeux ou autre."
       },
       "links": {
         "projects": {
@@ -39,7 +39,7 @@
     },
     "about": {
       "h1": {
-        "label": "Hey je suis Mickaël -- un développeur fullstack"
+        "label": "Hey je suis Mickaël"
       },
       "lists": [
         {

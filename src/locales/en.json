@@ -26,7 +26,7 @@
         "label": "Welcome"
       },
       "text": {
-        "label": "Full-stack developer building modern web applications. Interested in games, apps, and interactive experiences."
+        "label": "Developer building modern web applications. Interested in games, apps, and interactive experiences."
       },
       "links": {
         "projects": {
@@ -39,7 +39,7 @@
     },
     "about": {
       "h1": {
-        "label": "Hi I'm Mickaël -- a fullstack developer"
+        "label": "Hi I'm Mickaël"
       },
       "lists": [
         {
