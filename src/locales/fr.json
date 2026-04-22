@@ -233,7 +233,9 @@
           }
         },
         "submit": {
-          "label": "Envoyer"
+          "label": "Envoyer",
+          "success": "Formulaire envoyé",
+          "failure": "Impossible d'envoyer le formulaire"
         }
       }
     }

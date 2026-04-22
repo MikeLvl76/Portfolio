@@ -43,10 +43,14 @@ export default function Page() {
 
     try {
       const res = await send(result.data);
-      toast(res.message, "success", 3000);
+      if (res.status === 202) {
+        toast(content.form.submit.success, "success");
+        return;
+      }
+      toast(content.form.submit.failure, "error");
     } catch (err) {
       console.error(err);
-      toast((err as Error).message, "error", 3000);
+      toast(content.form.submit.failure, "error");
     }
   };
 

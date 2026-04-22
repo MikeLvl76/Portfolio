@@ -12,7 +12,7 @@ import {
 type ToastType = "success" | "error";
 
 type ToastContextType = {
-  toast: (message: string, type: ToastType, timeout: number) => void;
+  toast: (message: string, type: ToastType, timeout?: number) => void;
 };
 
 const ToastContext = createContext<ToastContextType>({

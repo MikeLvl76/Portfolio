@@ -233,7 +233,9 @@
           }
         },
         "submit": {
-          "label": "Send"
+          "label": "Send",
+          "success": "Successfully sent form",
+          "failure": "Cannot send form"
         }
       }
     }
