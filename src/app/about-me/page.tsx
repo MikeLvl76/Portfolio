@@ -1,9 +1,9 @@
 "use client";
 
-import { useLocaleContext } from "@/components/providers";
+import { useLocale } from "@/components/providers";
 
 export default function Page() {
-  const { getLocalePagesContent } = useLocaleContext();
+  const { getLocalePagesContent } = useLocale();
   const content = getLocalePagesContent().about;
 
   const List = ({ items }: { items: string[] }) => (

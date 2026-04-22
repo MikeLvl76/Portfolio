@@ -1,10 +1,10 @@
 "use client";
 
 import { MoonIcon, SunIcon } from "lucide-react";
-import { useThemeContext } from "../providers/theme-provider";
+import { useTheme } from "../providers/theme-provider";
 
 export default function ThemeSwitch() {
-  const { theme, toggleDarkTheme } = useThemeContext();
+  const { theme, toggleDarkTheme } = useTheme();
 
   return (
     <button onClick={toggleDarkTheme}>

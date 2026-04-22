@@ -20,7 +20,7 @@ const ThemeContext = createContext<ThemeContextType>({
   toggleDarkTheme: () => {},
 });
 
-export const useThemeContext = () => {
+export const useTheme = () => {
   const context = useContext(ThemeContext);
   if (!context) {
     throw Error("Cannot use context outside provider.");

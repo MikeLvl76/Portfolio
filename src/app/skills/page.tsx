@@ -2,7 +2,7 @@
 
 import { useMemo } from "react";
 import SkillSection from "./skill-section";
-import { useLocaleContext } from "@/components/providers";
+import { useLocale } from "@/components/providers";
 
 type Section = {
   title: string;
@@ -10,7 +10,7 @@ type Section = {
 };
 
 export default function Page() {
-  const { getLocalePagesContent } = useLocaleContext();
+  const { getLocalePagesContent } = useLocale();
   const content = getLocalePagesContent().skills;
 
   const sections: Section[] = useMemo(

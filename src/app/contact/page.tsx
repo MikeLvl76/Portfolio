@@ -5,7 +5,7 @@ import { useState } from "react";
 import z from "zod";
 import { $ZodFlattenedError } from "zod/v4/core";
 import ContactErrors from "./errors";
-import { useLocaleContext, useToast } from "@/components/providers";
+import { useLocale, useToast } from "@/components/providers";
 import { send } from "@/lib/mailer";
 
 export default function Page() {
@@ -19,7 +19,7 @@ export default function Page() {
       [K in keyof Contact]: string;
     }>["fieldErrors"]
   >();
-  const { getLocalePagesContent } = useLocaleContext();
+  const { getLocalePagesContent } = useLocale();
   const content = getLocalePagesContent().contact;
   const { toast } = useToast();
 

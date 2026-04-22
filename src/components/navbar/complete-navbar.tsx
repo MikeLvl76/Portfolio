@@ -3,12 +3,12 @@
 import { HomeIcon } from "lucide-react";
 import Navbar from "./navbar";
 import NavbarItem from "./navbar-item";
-import { Locale, useLocaleContext } from "../providers";
+import { Locale, useLocale } from "../providers";
 import { Dropdown } from "../dropdown";
 import ThemeSwitch from "../switch/theme";
 
 export default function CompleteNavbar() {
-  const { getLocaleNavbarContent, updateLocale, locale } = useLocaleContext();
+  const { getLocaleNavbarContent, updateLocale, locale } = useLocale();
   const content = getLocaleNavbarContent();
 
   return (

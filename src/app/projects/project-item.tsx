@@ -3,7 +3,7 @@
 import { FallbackIcon } from "@/components/fallback";
 import { ImageInfos } from "@/components/hooks";
 import { IconLink } from "@/components/icon-link";
-import { useThemeContext } from "@/components/providers/theme-provider";
+import { useTheme } from "@/components/providers/theme-provider";
 import { CodeIcon, ExternalLinkIcon } from "lucide-react";
 import Image from "next/image";
 import { SyntheticEvent, useRef, useState } from "react";
@@ -17,7 +17,7 @@ export default function ProjectItem({ info }: Props) {
   const timer = useRef<NodeJS.Timeout>(null);
   const [imageError, setImageError] =
     useState<SyntheticEvent<HTMLImageElement, Event>>();
-  const { theme } = useThemeContext();
+  const { theme } = useTheme();
 
   const handlePressEnd = () => {
     if (timer.current) {

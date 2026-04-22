@@ -34,7 +34,7 @@ const LocaleContext = createContext<LocaleContextType>({
   getLocalePagesContent: () => DEFAULT_LOCALE_CONTENT["pages"],
 });
 
-export const useLocaleContext = () => {
+export const useLocale = () => {
   const context = useContext(LocaleContext);
   if (!context) {
     throw Error("Cannot use context outside of provider.");

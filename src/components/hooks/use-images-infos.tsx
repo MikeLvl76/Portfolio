@@ -1,7 +1,7 @@
 "use client";
 
 import { Asset } from "@/types/asset";
-import { useLocaleContext } from "../providers";
+import { useLocale } from "../providers";
 import { useMemo } from "react";
 import { BASE_PATH } from "@/lib/paths";
 
@@ -21,7 +21,7 @@ const BASE_APP_URL = process.env.NEXT_PUBLIC_BASE_APP_URL;
 const BASE_REPO_URL = process.env.NEXT_PUBLIC_BASE_REPO_URL;
 
 export function useImagesInfos({ dir }: Params) {
-  const { getLocalePagesContent } = useLocaleContext();
+  const { getLocalePagesContent } = useLocale();
   const content = getLocalePagesContent().projects;
 
   const images = useMemo<ImageInfos[]>(

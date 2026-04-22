@@ -1,11 +1,11 @@
 "use client";
 
-import { useLocaleContext } from "@/components/providers";
+import { useLocale } from "@/components/providers";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
-  const { getLocalePagesContent } = useLocaleContext();
+  const { getLocalePagesContent } = useLocale();
   const content = getLocalePagesContent().home;
 
   return (
