@@ -108,7 +108,7 @@ export default function Page() {
           <div className="flex justify-end">
             <button
               type="submit"
-              className="bg-sky-500 text-text-light font-bold rounded-md px-4 py-2 text-sm sm:text-base hover:bg-sky-600 transition hover:cursor-pointe"
+              className="bg-sky-500 text-text-light font-bold rounded-md px-4 py-2 text-sm sm:text-base hover:bg-sky-600 transition hover:cursor-pointer"
             >
               {content.form.submit.label}
             </button>
