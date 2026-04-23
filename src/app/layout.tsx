@@ -8,7 +8,7 @@ import {
 } from "@/components/providers";
 
 export const metadata: Metadata = {
-  title: "Portfolio",
+  title: "Home",
   description: "Welcome to my Portfolio",
 };
 

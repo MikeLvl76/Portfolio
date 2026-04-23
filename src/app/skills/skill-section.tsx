@@ -1,33 +1,34 @@
 "use client";
 
 import { useIconsInfos } from "@/components/hooks";
-import { Section } from "@/components/section";
+import { Asset } from "@/types/asset";
 import Image from "next/image";
 
 type Props = {
-  title: string;
   assetDirname: string;
 };
 
-export default function SkillSection({ title, assetDirname }: Props) {
+export default function SkillSection({ assetDirname }: Props) {
   const infos = useIconsInfos({ dir: assetDirname });
 
-  return (
-    <Section
-      title={title}
-      elements={infos.map(({ filepath, alt, title }, i) => (
-        <Image
-          key={i}
-          src={filepath}
-          width={96}
-          height={96}
-          alt={alt}
-          title={title}
-          loading="eager"
-          className="hover:cursor-pointer p-2 bg-none dark:bg-bg-light dark:rounded-full"
-        />
+  const List = ({ items }: { items: Asset[] }) => (
+    <ul className="flex flex-row justify-center items-start flex-wrap gap-2">
+      {items.map(({ filepath, alt, title }, i) => (
+        <li key={i} className="leading-relaxed">
+          <Image
+            key={i}
+            src={filepath}
+            width={96}
+            height={96}
+            alt={alt}
+            title={title}
+            loading="eager"
+            className="hover:cursor-pointer p-2 bg-none dark:bg-bg-light dark:rounded-full"
+          />
+        </li>
       ))}
-      className="grid grid-cols-3 gap-1 sm:gap-4 sm:flex sm:flex-row sm:flex-wrap sm:items-start bg-bg-light dark:bg-bg-dark"
-    />
+    </ul>
   );
+
+  return <List items={infos} />;
 }

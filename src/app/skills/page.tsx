@@ -1,11 +1,11 @@
 "use client";
 
 import { useMemo } from "react";
-import SkillSection from "./skill-section";
 import { useLocale } from "@/components/providers";
+import SkillSection from "./skill-section";
 
 type Section = {
-  title: string;
+  name: string;
   assetDirname: string;
 };
 
@@ -16,23 +16,23 @@ export default function Page() {
   const sections: Section[] = useMemo(
     () => [
       {
-        title: content.sections.languages.label,
+        name: content.sections.languages.label,
         assetDirname: "languages",
       },
       {
-        title: content.sections.frameworks.label,
+        name: content.sections.frameworks.label,
         assetDirname: "frameworks",
       },
       {
-        title: content.sections.db.label,
+        name: content.sections.db.label,
         assetDirname: "database",
       },
       {
-        title: content.sections.tools.label,
+        name: content.sections.tools.label,
         assetDirname: "tools",
       },
       {
-        title: content.sections.libs.label,
+        name: content.sections.libs.label,
         assetDirname: "librairies",
       },
     ],
@@ -45,13 +45,26 @@ export default function Page() {
     ]
   );
 
-  const skillSections = sections.map(({ title, assetDirname }, i) => (
-    <SkillSection key={i} title={title} assetDirname={assetDirname} />
+  const skillsSections = sections.map(({ name, assetDirname }, i) => (
+    <div
+      key={i}
+      className="flex flex-col gap-3 w-full sm:w-[48%] p-4 rounded-2xl bg-slate-300 dark:bg-bg-light/5 backdrop-blur-sm shadow-sm"
+    >
+      <h3 className="text-base sm:text-lg font-semibold text-text-dark dark:text-text-light">
+        {name}
+      </h3>
+      <SkillSection assetDirname={assetDirname} />
+    </div>
   ));
 
   return (
-    <div className="flex flex-col items-start justify-start pt-2 sm:pt-6 gap-2 sm:gap-4 max-w-full min-h-screen overscroll-y-auto bg-bg-light dark:bg-bg-dark">
-      {...skillSections}
+    <div className="flex flex-col gap-10 p-6 sm:p-10 max-w-5xl mx-auto min-h-screen bg-bg-light dark:bg-bg-dark">
+      {/* <h2 className="text-2xl sm:text-4xl font-bold text-center text-text-dark dark:text-text-light">
+        {content.h1.label}
+      </h2> */}
+      <div className="flex flex-col sm:flex-row sm:flex-wrap gap-6">
+        {skillsSections}
+      </div>
     </div>
   );
 }
