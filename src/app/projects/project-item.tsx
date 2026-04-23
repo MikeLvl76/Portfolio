@@ -3,7 +3,6 @@
 import { FallbackIcon } from "@/components/fallback";
 import { ImageInfos } from "@/components/hooks";
 import { IconLink } from "@/components/icon-link";
-import { useTheme } from "@/components/providers/theme-provider";
 import { CodeIcon, ExternalLinkIcon } from "lucide-react";
 import Image from "next/image";
 import { SyntheticEvent, useRef, useState } from "react";
@@ -17,7 +16,6 @@ export default function ProjectItem({ info }: Props) {
   const timer = useRef<NodeJS.Timeout>(null);
   const [imageError, setImageError] =
     useState<SyntheticEvent<HTMLImageElement, Event>>();
-  const { theme } = useTheme();
 
   const handlePressEnd = () => {
     if (timer.current) {
@@ -39,13 +37,13 @@ export default function ProjectItem({ info }: Props) {
       onTouchCancel={handlePressEnd}
       onTouchMove={handlePressEnd}
       onContextMenu={(e) => e.preventDefault()}
-      className="flex flex-row min-w-36 min-h-36 sm:min-w-48 sm:min-h-48 md:min-w-60 md:min-h-60 rounded-md shadow-lg/30 dark:shadow-bg-light touch-none select-none"
+      className="flex flex-row min-w-32 min-h-32 sm:min-w-44 sm:min-h-44 md:min-w-56 md:min-h-56 rounded-md shadow-lg/30 touch-none select-none"
     >
       <div className="relative w-full h-full group overflow-hidden">
         {imageError ? (
           <FallbackIcon
-            fill={theme === "dark" ? "#111111" : "#eeeeee"}
-            className="flex self-end justify-self-center hover:cursor-pointer size-36 sm:size-48 md:size-60 bg-bg-dark dark:bg-bg-light rounded-md"
+            fill="#111111"
+            className="flex self-end justify-self-center hover:cursor-pointer size-32 sm:size-44 md:size-56 bg-bg-light rounded-md"
           />
         ) : (
           <Image
@@ -55,7 +53,7 @@ export default function ProjectItem({ info }: Props) {
             height={0}
             loading="eager"
             onError={setImageError}
-            className="hover:cursor-pointer object-fill size-36 sm:size-48 md:size-60 rounded-md bg-bg-dark dark:bg-bg-light"
+            className="hover:cursor-pointer object-fill size-32 sm:size-44 md:size-56 rounded-md bg-bg-light"
           />
         )}
         <div

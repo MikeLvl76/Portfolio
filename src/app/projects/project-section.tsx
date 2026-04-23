@@ -1,24 +1,27 @@
 "use client";
 
 import ProjectItem from "./project-item";
-import { Section } from "@/components/section";
-import { useImagesInfos } from "@/components/hooks/use-images-infos";
+import {
+  ImageInfos,
+  useImagesInfos,
+} from "@/components/hooks/use-images-infos";
 
 type Props = {
-  title: string;
   assetDirname: string;
 };
 
-export default function ProjectSection({ title, assetDirname }: Props) {
+export default function ProjectSection({ assetDirname }: Props) {
   const infos = useImagesInfos({ dir: assetDirname });
 
-  return (
-    <Section
-      title={title}
-      elements={infos.map((info, i) => (
-        <ProjectItem key={i} info={info} />
+  const List = ({ items }: { items: ImageInfos[] }) => (
+    <ul className="flex flex-row justify-center sm:justify-start items-start flex-wrap gap-4 sm:gap-8">
+      {items.map((item, i) => (
+        <li key={i} className="leading-relaxed">
+          <ProjectItem key={i} info={item} />
+        </li>
       ))}
-      className="flex flex-col gap-4 items-center sm:flex-row sm:flex-wrap sm:items-start"
-    />
+    </ul>
   );
+
+  return <List items={infos} />;
 }

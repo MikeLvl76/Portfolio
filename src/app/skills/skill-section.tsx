@@ -12,7 +12,7 @@ export default function SkillSection({ assetDirname }: Props) {
   const infos = useIconsInfos({ dir: assetDirname });
 
   const List = ({ items }: { items: Asset[] }) => (
-    <ul className="flex flex-row justify-center items-start flex-wrap gap-2">
+    <ul className="flex flex-row justify-start items-start flex-wrap gap-2">
       {items.map(({ filepath, alt, title }, i) => (
         <li key={i} className="leading-relaxed">
           <Image
