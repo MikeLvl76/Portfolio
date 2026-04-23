@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+import { Metadata, Viewport } from "next";
 import "./globals.css";
 import { CompleteNavbar } from "@/components/navbar";
 import {
@@ -10,6 +10,11 @@ import {
 export const metadata: Metadata = {
   title: "Home",
   description: "Welcome to my Portfolio",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({
