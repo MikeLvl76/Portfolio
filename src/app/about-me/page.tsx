@@ -1,40 +1,21 @@
 "use client";
 
 import { useLocale } from "@/components/providers";
-import { SimpleList } from "@/components/simple-list";
+import Sections from "./sections";
 
 export default function Page() {
   const { getLocalePagesContent } = useLocale();
   const content = getLocalePagesContent().about;
-
-  const sections = content.lists.map(({ name, items }, i) => (
-    <div
-      key={i}
-      className="flex flex-col gap-3 w-full sm:w-[48%] p-4 rounded-2xl bg-slate-300 dark:bg-bg-light/5 backdrop-blur-sm shadow-sm"
-    >
-      <h3 className="text-base sm:text-lg font-semibold text-text-dark dark:text-text-light">
-        {name}
-      </h3>
-      <SimpleList<string>
-        items={items}
-        renderItem={(item) => `• ${item}`}
-        itemProps={{
-          className:
-            "text-sm sm:text-base text-text-dark dark:text-text-light leading-relaxed",
-        }}
-        className="space-y-2"
-      />
-    </div>
-  ));
 
   return (
     <div className="flex flex-col gap-10 p-6 sm:p-10 max-w-5xl mx-auto min-h-screen bg-bg-light dark:bg-bg-dark">
       <h2 className="text-2xl sm:text-4xl font-bold text-center text-text-dark dark:text-text-light">
         {content.h1.label}
       </h2>
-      <div className="flex flex-col sm:flex-row sm:flex-wrap gap-6">
-        {sections}
-      </div>
+      <Sections
+        lists={content.lists}
+        className="flex flex-col sm:flex-row sm:flex-wrap gap-6"
+      />
     </div>
   );
 }

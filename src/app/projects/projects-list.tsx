@@ -11,7 +11,7 @@ type Props = {
   assetDirname: string;
 };
 
-export default function ProjectSection({ assetDirname }: Props) {
+export default function ProjectsList({ assetDirname }: Props) {
   const infos = useImagesInfos({ dir: assetDirname });
 
   return (

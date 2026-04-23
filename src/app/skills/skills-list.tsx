@@ -9,7 +9,7 @@ type Props = {
   assetDirname: string;
 };
 
-export default function SkillSection({ assetDirname }: Props) {
+export default function SkillList({ assetDirname }: Props) {
   const infos = useIconsInfos({ dir: assetDirname });
 
   return (
