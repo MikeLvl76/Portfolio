@@ -1,5 +1,6 @@
 "use client";
 
+import { SimpleList } from "@/components/simple-list";
 import ProjectItem from "./project-item";
 import {
   ImageInfos,
@@ -13,15 +14,12 @@ type Props = {
 export default function ProjectSection({ assetDirname }: Props) {
   const infos = useImagesInfos({ dir: assetDirname });
 
-  const List = ({ items }: { items: ImageInfos[] }) => (
-    <ul className="flex flex-row justify-center sm:justify-start items-start flex-wrap gap-4 sm:gap-8">
-      {items.map((item, i) => (
-        <li key={i} className="leading-relaxed">
-          <ProjectItem key={i} info={item} />
-        </li>
-      ))}
-    </ul>
+  return (
+    <SimpleList<ImageInfos>
+      items={infos}
+      renderItem={(item) => <ProjectItem info={item} />}
+      itemProps={{ className: "leading-relaxed" }}
+      className="flex flex-row justify-center sm:justify-start items-start flex-wrap gap-4 sm:gap-8"
+    />
   );
-
-  return <List items={infos} />;
 }

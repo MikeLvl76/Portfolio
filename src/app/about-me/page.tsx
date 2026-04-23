@@ -1,23 +1,11 @@
 "use client";
 
 import { useLocale } from "@/components/providers";
+import { SimpleList } from "@/components/simple-list";
 
 export default function Page() {
   const { getLocalePagesContent } = useLocale();
   const content = getLocalePagesContent().about;
-
-  const List = ({ items }: { items: string[] }) => (
-    <ul className="space-y-2">
-      {items.map((item, i) => (
-        <li
-          key={i}
-          className="text-sm sm:text-base text-text-dark dark:text-text-light leading-relaxed"
-        >
-          • {item}
-        </li>
-      ))}
-    </ul>
-  );
 
   const sections = content.lists.map(({ name, items }, i) => (
     <div
@@ -27,7 +15,15 @@ export default function Page() {
       <h3 className="text-base sm:text-lg font-semibold text-text-dark dark:text-text-light">
         {name}
       </h3>
-      <List items={items} />
+      <SimpleList<string>
+        items={items}
+        renderItem={(item) => `• ${item}`}
+        itemProps={{
+          className:
+            "text-sm sm:text-base text-text-dark dark:text-text-light leading-relaxed",
+        }}
+        className="space-y-2"
+      />
     </div>
   ));
 
