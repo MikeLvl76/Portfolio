@@ -1,7 +1,7 @@
 "use client";
 
 import { SimpleList } from "@/components/simple-list";
-import ProjectItem from "./project-item";
+import { ProjectItem } from "./project-item";
 import {
   ImageInfos,
   useImagesInfos,

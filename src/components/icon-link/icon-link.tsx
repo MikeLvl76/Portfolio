@@ -8,9 +8,17 @@ type Props = {
   icon: LucideIcon;
   iconProps: LucideProps;
   linkProps: LinkProps & AnchorHTMLAttributes<HTMLAnchorElement>;
+  canBeRendered?: boolean;
 };
 
-export default function IconLink({ icon: Icon, iconProps, linkProps }: Props) {
+export default function IconLink({
+  icon: Icon,
+  iconProps,
+  linkProps,
+  canBeRendered = true,
+}: Props) {
+  if (!canBeRendered) return null;
+
   return (
     <Link {...linkProps}>
       <Icon {...iconProps} />

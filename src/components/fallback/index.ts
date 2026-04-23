@@ -1,3 +1,3 @@
-import FallbackIcon from "./icon";
+import SafeImage from "./safe-image";
 
-export { FallbackIcon };
+export { SafeImage };
