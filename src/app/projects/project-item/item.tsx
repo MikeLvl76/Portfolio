@@ -35,7 +35,7 @@ export default function ProjectItem({ info }: Props) {
       onTouchCancel={handlePressEnd}
       onTouchMove={handlePressEnd}
       onContextMenu={(e) => e.preventDefault()}
-      className="flex w-32 h-32 sm:w-44 sm:h-44 md:w-56 md:h-56 md:min-h-56 rounded-md shadow-lg/30 touch-none select-none"
+      className="flex w-32 h-32 sm:w-36 sm:h-36 md:w-42 md:h-42 lg:w-50 lg:h-50 rounded-md shadow-lg/30 touch-none select-none"
     >
       <div className="relative w-full h-full group overflow-hidden">
         <SafeImage
