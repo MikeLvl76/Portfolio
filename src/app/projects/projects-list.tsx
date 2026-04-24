@@ -2,10 +2,7 @@
 
 import { SimpleList } from "@/components/simple-list";
 import { ProjectItem } from "./project-item";
-import {
-  ImageInfos,
-  useImagesInfos,
-} from "@/components/hooks/use-images-infos";
+import { useImagesInfos } from "@/components/hooks/use-images-infos";
 
 type Props = {
   assetDirname: string;
@@ -15,7 +12,7 @@ export default function ProjectsList({ assetDirname }: Props) {
   const infos = useImagesInfos({ dir: assetDirname });
 
   return (
-    <SimpleList<ImageInfos>
+    <SimpleList
       items={infos}
       renderItem={(item) => <ProjectItem info={item} />}
       itemProps={{ className: "leading-relaxed" }}

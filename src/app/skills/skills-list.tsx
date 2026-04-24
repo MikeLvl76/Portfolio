@@ -2,7 +2,6 @@
 
 import { useIconsInfos } from "@/components/hooks";
 import { SimpleList } from "@/components/simple-list";
-import { Asset } from "@/types/asset";
 import Image from "next/image";
 
 type Props = {
@@ -13,7 +12,7 @@ export default function SkillList({ assetDirname }: Props) {
   const infos = useIconsInfos({ dir: assetDirname });
 
   return (
-    <SimpleList<Asset>
+    <SimpleList
       items={infos}
       renderItem={({ filepath, alt, title }) => (
         <Image

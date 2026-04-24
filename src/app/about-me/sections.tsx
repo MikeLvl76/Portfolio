@@ -21,7 +21,7 @@ export default function Sections({ lists, className }: Props) {
       }}
       className="flex flex-col gap-3 w-full sm:w-[48%] p-4 rounded-2xl bg-slate-300 dark:bg-bg-light/5 backdrop-blur-sm shadow-sm"
     >
-      <SimpleList<string>
+      <SimpleList
         items={items}
         renderItem={(item) => `• ${item}`}
         itemProps={{
