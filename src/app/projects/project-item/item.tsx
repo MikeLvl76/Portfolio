@@ -35,7 +35,7 @@ export default function ProjectItem({ info }: Props) {
       onTouchCancel={handlePressEnd}
       onTouchMove={handlePressEnd}
       onContextMenu={(e) => e.preventDefault()}
-      className="flex flex-row min-w-32 min-h-32 sm:min-w-44 sm:min-h-44 md:min-w-56 md:min-h-56 rounded-md shadow-lg/30 touch-none select-none"
+      className="flex w-32 h-32 sm:w-44 sm:h-44 md:w-56 md:h-56 md:min-h-56 rounded-md shadow-lg/30 touch-none select-none"
     >
       <div className="relative w-full h-full group overflow-hidden">
         <SafeImage
@@ -47,9 +47,9 @@ export default function ProjectItem({ info }: Props) {
           fallbackIconProps={{
             fill: "#111111",
             className:
-              "flex self-end justify-self-center hover:cursor-pointer size-32 sm:size-44 md:size-56 bg-bg-light rounded-md",
+              "flex self-end object-cover justify-self-center hover:cursor-pointer w-full h-full bg-bg-light rounded-md",
           }}
-          className="hover:cursor-pointer object-fill size-32 sm:size-44 md:size-56 rounded-md bg-bg-light"
+          className="hover:cursor-pointer object-cover w-full h-full rounded-md bg-bg-light"
         />
         <div
           className={`absolute bottom-0 left-0 w-full h-full flex gap-2 translate-y-full bg-nav-dark group-hover:backdrop-blur-lg backdrop-brightness-75 group-hover:translate-y-0
