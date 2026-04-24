@@ -1,20 +1,28 @@
 "use client";
 
-import { HomeIcon } from "lucide-react";
+import { ChevronUpIcon, HomeIcon } from "lucide-react";
 import Navbar from "./navbar";
 import NavbarItem from "./navbar-item";
 import { Locale, useLocale } from "../providers";
 import { Dropdown } from "../dropdown";
 import ThemeSwitch from "../switch/theme";
+import { useIsMobile } from "../hooks";
+import { useState } from "react";
 
 export default function CompleteNavbar() {
   const { getLocaleNavbarContent, updateLocale, locale } = useLocale();
   const content = getLocaleNavbarContent();
+  const isMobile = useIsMobile();
+  const [collapse, setCollapse] = useState(false);
 
   return (
-    <Navbar className="sticky top-0 z-50 w-full bg-nav-light dark:bg-nav-dark shadow-xl/30 px-4 md:px-6 lg:px-8 py-3">
+    <Navbar
+      className={`sticky top-0 z-50 w-full bg-nav-light dark:bg-nav-dark shadow-xl/30 px-4 md:px-6 lg:px-8 py-3`}
+    >
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4 md:gap-6 bg-nav-light dark:bg-nav-dark">
-        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 flex-1">
+        <div
+          className={`flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 flex-1 transition-all duration-300 ${collapse && isMobile ? "max-h-0 overflow-hidden" : "max-h-40"}`}
+        >
           <NavbarItem
             icon={HomeIcon}
             title={content.home.title}
@@ -62,6 +70,15 @@ export default function CompleteNavbar() {
           />
           <ThemeSwitch />
         </div>
+        {isMobile && (
+          <ChevronUpIcon
+            onClick={() => setCollapse((prev) => !prev)}
+            className={`absolute self-center bottom-0 translate-y-1/2 size-7 
+                      text-text-dark dark:text-text-light 
+                      bg-bg-light dark:bg-bg-dark rounded-full p-1 
+                        transition-transform duration-300 ${collapse ? "rotate-180" : ""}`}
+          />
+        )}
       </div>
     </Navbar>
   );
