@@ -46,7 +46,11 @@ export default function CompleteNavbar() {
             className="flex flex-row items-center justify-center gap-2 hover:decoration-0 sm:p-2 w-fit h-fit md:h-full hover:bg-[#d7d3d4] dark:hover:bg-[#555555] rounded-sm"
           />
         </div>
-        <div className="flex flex-row gap-4 self-start sm:self-auto sm:w-auto w-full p-2 text-[11px] sm:text-base lg:text-md font-bold hover:cursor-pointer focus:outline-none focus:ring-0 bg-slate-100 border border-slate-100 focus:border-slate-100 dark:bg-slate-900 dark:border-slate-900 dark:focus:border-slate-900">
+        <div
+          className="flex flex-row gap-2 sm:gap-4 justify-between sm:self-auto sm:w-auto w-full sm:p-2 text-[11px] sm:text-base lg:text-md font-bold hover:cursor-pointer 
+                      focus:outline-none focus:ring-0 bg-slate-100 border border-slate-100 focus:border-slate-100
+                    dark:bg-slate-900 dark:border-slate-900 dark:focus:border-slate-900"
+        >
           <Dropdown
             value={locale.lang}
             values={[

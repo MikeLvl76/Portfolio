@@ -38,7 +38,7 @@ export default function Dropdown({
   }, []);
 
   return (
-    <div ref={ref} className={cn("relative w-full", className)}>
+    <div ref={ref} className={cn("relative w-fit", className)}>
       <button
         type="button"
         onClick={() => setOpen((prev) => !prev)}
