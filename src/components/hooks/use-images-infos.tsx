@@ -175,12 +175,22 @@ export function useImagesInfos({ dir }: Params) {
           code: `${BASE_REPO_URL}/Portfolio`,
         },
       },
+      {
+        filepath: `${BASE_PATH}/images/C/json.png`,
+        alt: content.sections.c.items.json_parser.alt,
+        title: content.sections.c.items.json_parser.title,
+        description: content.sections.c.items.json_parser.description,
+        externalLinks: {
+          code: `${BASE_REPO_URL}/json-parser`,
+        },
+      },
     ],
     [
       content.sections.java.items,
       content.sections.js.items,
       content.sections.py.items,
       content.sections.ts.items,
+      content.sections.c.items
     ]
   );
 

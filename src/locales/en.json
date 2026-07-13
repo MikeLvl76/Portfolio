@@ -183,6 +183,16 @@
               "description": "An old college project developped in Java and using Processing. This project shows a 3D version of one classroom in my University."
             }
           }
+        },
+        "c": {
+          "label": "C",
+          "items": {
+            "json_parser": {
+              "alt": "JSON parser image",
+              "title": "JSON Parser",
+              "description": "A tiny json parser written in C on Windows. It might be updated in the future."
+            }
+          }
         }
       }
     },

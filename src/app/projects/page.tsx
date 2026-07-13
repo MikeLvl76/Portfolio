@@ -23,6 +23,10 @@ export default function Page() {
             name: "Java",
             assetDirname: "java",
           },
+          {
+            name: "C",
+            assetDirname: "C",
+          }
         ]}
         className="flex flex-col sm:grid sm:grid-cols-2 gap-6"
       />

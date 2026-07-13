@@ -183,6 +183,16 @@
               "description": "Ancien projet d'université où une salle de classe devait être modélisé avec Processing en Java. Le code n'est pas mis à jour."
             }
           }
+        },
+        "c": {
+          "label": "C",
+          "items": {
+            "json_parser": {
+              "alt": "Image du JSON parser",
+              "title": "Parser de JSON",
+              "description": "Petit parser écrit en C sur Windows. Des améliorations seront apportées bientôt."
+            }
+          }
         }
       }
     },
